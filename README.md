@@ -1,5 +1,4 @@
-# express-es6-rest-api-starter
-Starter project for an ES6 RESTful Express API.
+# ES6 RESTful Express API Starter
 
 # [![Express ES6 REST API Starter](https://cloud.githubusercontent.com/assets/4172932/12560514/3a678a08-c3c1-11e5-94b3-b4ce2cbd8e21.jpg)](https://github.com/KunalKapadia/express-es6-rest-api-starter)
 
