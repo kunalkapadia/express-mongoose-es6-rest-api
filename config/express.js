@@ -22,6 +22,7 @@ app.use(methodOverride());
 // Enable CORS - Cross Origin Resource Sharing
 app.use(cors());
 
+// mount all routes on /api path
 app.use('/api', routes);
 
 // catch different types of error

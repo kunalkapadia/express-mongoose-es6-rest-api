@@ -49,12 +49,12 @@ gulp.task('eslint', () =>
 );
 
 // Start server with restart on file changes
-gulp.task('nodemon', ['babel'], () =>
+gulp.task('nodemon', ['eslint', 'babel'], () =>
 	plugins.nodemon({
 		script: path.join('dist', 'index.js'),
 		ext: 'js',
 		ignore: ['node_modules/**/*.js', 'dist/**/*.js'],
-		tasks: ['babel']
+		tasks: ['eslint', 'babel']
 	})
 );
 

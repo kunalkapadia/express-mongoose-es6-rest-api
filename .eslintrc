@@ -30,17 +30,8 @@
 			2,
 			"nofunc"
 		],
-		// TODO: turning off for now
+		// TODO: turning on later
 		"comma-dangle": [
-			0
-		],
-		"one-var": [
-			0
-		],
-		"func-names": [
-			0
-		],
-		"no-else-return": [
 			0
 		]
 	},
