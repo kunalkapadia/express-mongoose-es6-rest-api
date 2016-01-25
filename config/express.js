@@ -1,21 +1,27 @@
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
+import express from 'express';
+import path from 'path';
+import logger from 'morgan';
+import bodyParser from 'body-parser';
+import compress from 'compression';
+import methodOverride from 'method-override';
+import cors from 'cors';
+import routes from '../server/routes';
 
-var routes = require('../routes/index');
-var users = require('../routes/users');
+const app = express();
 
-var app = express();
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/', routes);
-app.use('/users', users);
+// parses body params and attaches them to req.body
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(compress());
+app.use(methodOverride());
+
+// Enable CORS - Cross Origin Resource Sharing
+app.use(cors());
+
+app.use('/api', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -48,4 +54,4 @@ if (app.get('env') === 'development') {
 //	});
 //});
 
-module.exports = app;
+export default app;
