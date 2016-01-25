@@ -13,5 +13,15 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "del": "^2.2.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-newer": "^1.1.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }
