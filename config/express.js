@@ -5,7 +5,9 @@ import bodyParser from 'body-parser';
 import compress from 'compression';
 import methodOverride from 'method-override';
 import cors from 'cors';
+import httpStatus from 'http-status';
 import routes from '../server/routes';
+import * as utilityService from '../server/services/utility';
 
 const app = express();
 
@@ -23,35 +25,40 @@ app.use(cors());
 
 app.use('/api', routes);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-	var err = new Error('Not Found');
-	err.status = 404;
-	next(err);
+// catch different types of error
+app.use(function (err, req, res, next) {
+	//if (err instanceof expressValidation.ValidationError) {
+	//	const completeErrorMessage = _(err.errors).map((error) => {
+	//		return error.messages.join('. ');
+	//	}).join(' and ');
+	//	const error = utilityService.createEnhancedError(completeErrorMessage, err.status);
+	//	error.category = 'ParamValidationError';
+	//	return next(error);
+	//} else if (err instanceof mongoose.Error.ValidationError) {
+	//	const completeErrorMessage = _(err.errors).map((value, key) => {
+	//		return `${key}: ${value.message}`;
+	//	}).join(' and ');
+	//	const error = utilityService.createEnhancedError(completeErrorMessage, httpStatus.BAD_REQUEST);
+	//	error.category = 'MongooseValidationError';
+	//	return next(error);
+	//} else {
+	const error = utilityService.createError(err.message, err.status, err.isPublic);
+	return next(error);
+	//}
 });
 
-// error handlers
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+	const err = utilityService.createError('API not found', httpStatus.NOT_FOUND);
+	return next(err);
+});
 
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-	app.use(function(err, req, res, next) {
-		res.status(err.status || 500);
-		res.render('error', {
-			message: err.message,
-			error: err
-		});
+// error handler
+app.use(function(err, req, res, next) {
+	return res.status(err.status).json({
+		message: err.isPublic ? err.message : httpStatus[err.status],
+		error: process.env.NODE_ENV === 'development' ? err : {}
 	});
-}
-
-// production error handler
-// no stacktraces leaked to user
-//app.use(function(err, req, res, next) {
-//	res.status(err.status || 500);
-//	res.render('error', {
-//		message: err.message,
-//		error: {}
-//	});
-//});
+});
 
 export default app;
