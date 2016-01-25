@@ -25,9 +25,11 @@
     "debug": "^2.2.0",
     "dotenv": "^2.0.0",
     "express": "~4.13.1",
+    "express-winston": "^1.2.0",
     "http-status": "^0.2.0",
     "method-override": "^2.3.5",
-    "morgan": "~1.6.1"
+    "morgan": "~1.6.1",
+    "winston": "^2.1.1"
   },
   "devDependencies": {
     "babel": "^5.8.23",
