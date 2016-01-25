@@ -1,6 +1,9 @@
-const app = require('./config/express'),
-	debug = require('debug')('express-es6-rest-api-starter:index');
+import config from './config/env';
+import app from './config/express';
 
-app.listen(3000, () => {
-	debug(`server started on port ${process.env.HTTP_PORT} in ${process.env.NODE_ENV} env`);
+const debug = require('debug')('express-es6-rest-api-starter:index');
+
+// listen on port HTTP_PORT
+app.listen(config.HTTP_PORT, () => {
+	debug(`started server on port ${config.HTTP_PORT} (${config.NODE_ENV})`);
 });
