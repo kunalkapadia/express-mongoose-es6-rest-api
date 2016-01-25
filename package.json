@@ -1,9 +1,13 @@
 {
   "name": "express-es6-rest-api-starter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Starter project for an ES6 RESTful Express API",
   "main": "index.js",
   "private": false,
+  "engines": {
+    "node": "4.2.x",
+    "npm": "3.3.x"
+  },
   "scripts": {
     "start": "gulp serve",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +20,7 @@
   "dependencies": {
     "body-parser": "~1.13.2",
     "compression": "^1.6.1",
+    "cookie-parser": "^1.4.1",
     "cors": "^2.7.1",
     "debug": "^2.2.0",
     "dotenv": "^2.0.0",
