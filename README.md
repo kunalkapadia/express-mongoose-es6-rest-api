@@ -41,11 +41,11 @@ Universal logging library [winston](https://www.npmjs.com/package/winston) is us
 
 ### API logging
 Logs detailed info about each api request to console during development
-![Detailed API logging](https://cloud.githubusercontent.com/assets/4172932/12563354/f0a4b558-c3cf-11e5-9d8c-66f7ca323eac.JPG)]
+![Detailed API logging](https://cloud.githubusercontent.com/assets/4172932/12563354/f0a4b558-c3cf-11e5-9d8c-66f7ca323eac.JPG)
 
 ### Error logging
 Logs stacktrace of error to console
-![Error logging](https://cloud.githubusercontent.com/assets/4172932/12563361/fb9ef108-c3cf-11e5-9a58-3c5c4936ae3e.JPG)]
+![Error logging](https://cloud.githubusercontent.com/assets/4172932/12563361/fb9ef108-c3cf-11e5-9a58-3c5c4936ae3e.JPG)
 
 ## Debug messages
 
