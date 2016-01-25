@@ -1,10 +1,10 @@
 import express from 'express';
 
-const router = express.Router();
+const router = express.Router();	// eslint-disable-line new-cap
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', (req, res) =>
+  res.send('respond with a resource')
+);
 
 export default router;

@@ -27,8 +27,11 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "del": "^2.2.0",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^4.0.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
+    "gulp-eslint": "^1.1.1",
     "gulp-load-plugins": "^1.2.0",
     "gulp-newer": "^1.1.0",
     "gulp-nodemon": "^2.0.6",

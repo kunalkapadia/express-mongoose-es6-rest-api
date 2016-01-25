@@ -1,0 +1,55 @@
+{
+	"rules": {
+		"indent": [
+			2,
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"quotes": [
+			2,
+			"single"
+		],
+		/*"linebreak-style": [
+			2,
+			"windows"
+		],*/
+		"semi": [
+			2,
+			"always"
+		],
+		"space-before-function-paren": [
+			2,
+			{
+				"anonymous": "always",
+				"named": "never"
+			}
+		],
+		"no-use-before-define": [
+			2,
+			"nofunc"
+		],
+		// TODO: turning off for now
+		"comma-dangle": [
+			0
+		],
+		"one-var": [
+			0
+		],
+		"func-names": [
+			0
+		],
+		"no-else-return": [
+			0
+		]
+	},
+	"env": {
+		"node": true,
+		"mocha": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"airbnb/base"
+	]
+}

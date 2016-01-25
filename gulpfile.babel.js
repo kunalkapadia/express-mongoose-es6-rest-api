@@ -11,13 +11,13 @@ const paths = {
 };
 
 // Clean up dist files
-gulp.task('clean', () => {
-	return del(['dist/**', 'coverage/**', '!dist', '!coverage']);
-});
+gulp.task('clean', () =>
+	del(['dist/**', 'coverage/**', '!dist', '!coverage'])
+);
 
 // Compile ES6 to ES5 and copy to dist
-gulp.task('babel', () => {
-	return gulp.src([...paths.js, '!gulpfile.babel.js'], {base: '.'})
+gulp.task('babel', () =>
+	gulp.src([...paths.js, '!gulpfile.babel.js'], { base: '.' })
 		.pipe(plugins.newer('dist'))
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.babel())
@@ -27,22 +27,36 @@ gulp.task('babel', () => {
 		})
 		.pipe(plugins.sourcemaps.write('.', {
 			includeContent: false,
-			sourceRoot: function (file) {
+			sourceRoot(file) {
 				return path.relative(file.path, __dirname);
 			}
 		}))
-		.pipe(gulp.dest('dist'));
-});
+		.pipe(gulp.dest('dist'))
+);
+
+// Lint Javascript
+gulp.task('eslint', () =>
+	gulp.src(paths.js)
+		// eslint() attaches the lint output to the "eslint" property
+		// of the file object so it can be used by other modules.
+		.pipe(plugins.eslint())
+		// eslint.format() outputs the lint results to the console.
+		// Alternatively use eslint.formatEach() (see Docs).
+		.pipe(plugins.eslint.format())
+		// To have the process exit with an error code (1) on
+		// lint error, return the stream and pipe to failAfterError last.
+		.pipe(plugins.eslint.failAfterError())
+);
 
 // Start server with restart on file changes
-gulp.task('nodemon', ['babel'], () => {
+gulp.task('nodemon', ['babel'], () =>
 	plugins.nodemon({
 		script: path.join('dist', 'index.js'),
 		ext: 'js',
 		ignore: ['node_modules/**/*.js', 'dist/**/*.js'],
 		tasks: ['babel']
-	});
-});
+	})
+);
 
 gulp.task('serve', ['clean'], () => {
 	runSequence('nodemon');

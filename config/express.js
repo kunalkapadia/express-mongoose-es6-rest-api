@@ -1,5 +1,4 @@
 import express from 'express';
-import path from 'path';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import compress from 'compression';
@@ -26,23 +25,23 @@ app.use(cors());
 app.use('/api', routes);
 
 // catch different types of error
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
 	const error = utilityService.createError(err.message, err.status, err.isPublic);
 	return next(error);
 });
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
 	const err = utilityService.createError('API not found', httpStatus.NOT_FOUND);
 	return next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-	return res.status(err.status).json({
+app.use((err, req, res, next) =>		// eslint-disable-line no-unused-vars
+	res.status(err.status).json({
 		message: err.isPublic ? err.message : httpStatus[err.status],
 		error: process.env.NODE_ENV === 'development' ? err : {}
-	});
-});
+	})
+);
 
 export default app;
