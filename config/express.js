@@ -27,24 +27,8 @@ app.use('/api', routes);
 
 // catch different types of error
 app.use(function (err, req, res, next) {
-	//if (err instanceof expressValidation.ValidationError) {
-	//	const completeErrorMessage = _(err.errors).map((error) => {
-	//		return error.messages.join('. ');
-	//	}).join(' and ');
-	//	const error = utilityService.createEnhancedError(completeErrorMessage, err.status);
-	//	error.category = 'ParamValidationError';
-	//	return next(error);
-	//} else if (err instanceof mongoose.Error.ValidationError) {
-	//	const completeErrorMessage = _(err.errors).map((value, key) => {
-	//		return `${key}: ${value.message}`;
-	//	}).join(' and ');
-	//	const error = utilityService.createEnhancedError(completeErrorMessage, httpStatus.BAD_REQUEST);
-	//	error.category = 'MongooseValidationError';
-	//	return next(error);
-	//} else {
 	const error = utilityService.createError(err.message, err.status, err.isPublic);
 	return next(error);
-	//}
 });
 
 // catch 404 and forward to error handler
