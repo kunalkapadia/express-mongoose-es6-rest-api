@@ -1,4 +1,4 @@
-# ES6 RESTful Express API Starter
+# Boilerplate for building REST APIs using express and mongoose in ES6.
 
 [![bitHound Overall Score](https://www.bithound.io/github/KunalKapadia/express-es6-rest-api-starter/badges/score.svg)](https://www.bithound.io/github/KunalKapadia/express-es6-rest-api-starter)
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is a starter kit for building REST APIs with ES6 and Express. Helps you stay productive by following best practices. Follows [Airbnb's Javascript style guide](https://github.com/airbnb/javascript).
+This is a boilerplate application for building REST APIs with ES6 and Express. Helps you stay productive by following best practices. Follows [Airbnb's Javascript style guide](https://github.com/airbnb/javascript).
 
 ### Features
 
@@ -19,14 +19,14 @@ This is a starter kit for building REST APIs with ES6 and Express. Helps you sta
 | Debugging via [debug](https://www.npmjs.com/package/debug)           | Instead of inserting and deleting console.log you can replace it with the debug function and just leave it there. You can then selectively debug portions of your code by setting DEBUG env variable. If DEBUG env variable is not set, nothing is displayed to the console.                       |
 
 - CORS support via [cors](https://github.com/troygoode/node-cors)
-- Uses [http-status](https://www.npmjs.com/package/http-status) to set status. It is recommended to use HTTPStatus.INTERNAL_SERVER_ERROR instead of directly using 500 when setting status code.
+- Uses [http-status](https://www.npmjs.com/package/http-status) to set status. It is recommended to use `HTTPStatus.INTERNAL_SERVER_ERROR` instead of directly using `500` when setting status code.
 
 ## Getting Started
 
 ```
 # clone it
-git clone git@github.com:KunalKapadia/express-es6-rest-api-starter.git
-cd express-es6-rest-api-starter
+git clone git@github.com:KunalKapadia/express-mongoose-es6-rest-api.git
+cd express-mongoose-es6-rest-api
 npm install
 
 # Make it your own
@@ -36,10 +36,9 @@ rm -rf .git && git init && npm init
 # Create .env file at the root path with below content
 NODE_ENV=development
 HTTP_PORT=3000
-DEBUG=express-es6-rest-api-starter:*
 
 # start server
-npm start or gulp serve (requires gulp to be installed globally)
+DEBUG=express-mongoose-es6-rest-api:* npm start or gulp serve (requires gulp to be installed globally)
 
 # prepare ES5 files for deployment. All ES5 files are saved in dist/ directory.
 npm build or gulp (requires gulp to be installed globally)

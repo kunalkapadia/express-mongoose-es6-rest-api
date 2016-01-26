@@ -1,5 +1,5 @@
 {
-  "name": "express-es6-rest-api-starter",
+  "name": "express-mongoose-es6-rest-api",
   "version": "0.2.0",
   "description": "Starter project for an ES6 RESTful Express API",
   "main": "index.js",
@@ -15,10 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:KunalKapadia/express-es6-rest-api-starter.git"
+    "url": "git@github.com:KunalKapadia/express-mongoose-es6-rest-api.git"
   },
   "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
   "dependencies": {
+    "bluebird": "^3.1.4",
     "body-parser": "^1.14.2",
     "compression": "^1.6.1",
     "cookie-parser": "^1.4.1",
@@ -29,6 +30,7 @@
     "express-winston": "^1.2.0",
     "http-status": "^0.2.0",
     "method-override": "^2.3.5",
+    "mongoose": "^4.3.7",
     "morgan": "~1.6.1",
     "winston": "^2.1.1"
   },
