@@ -1,49 +1,50 @@
 {
-  "name": "express-es6-rest-api-starter",
-  "version": "0.2.0",
-  "description": "Starter project for an ES6 RESTful Express API",
-  "main": "index.js",
-  "private": false,
-  "engines": {
-    "node": "4.2.x",
-    "npm": "3.3.x"
-  },
-  "scripts": {
-    "start": "gulp serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:KunalKapadia/express-es6-rest-api-starter.git"
-  },
-  "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
-  "dependencies": {
-    "body-parser": "~1.13.2",
-    "compression": "^1.6.1",
-    "cookie-parser": "^1.4.1",
-    "cors": "^2.7.1",
-    "debug": "^2.2.0",
-    "dotenv": "^2.0.0",
-    "express": "~4.13.1",
-    "express-winston": "^1.2.0",
-    "http-status": "^0.2.0",
-    "method-override": "^2.3.5",
-    "morgan": "~1.6.1",
-    "winston": "^2.1.1"
-  },
-  "devDependencies": {
-    "babel": "^5.8.23",
-    "del": "^2.2.0",
-    "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^4.0.0",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^5.2.1",
-    "gulp-eslint": "^1.1.1",
-    "gulp-load-plugins": "^1.2.0",
-    "gulp-newer": "^1.1.0",
-    "gulp-nodemon": "^2.0.6",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "run-sequence": "^1.1.5"
-  }
+	"name": "express-es6-rest-api-starter",
+	"version": "0.2.0",
+	"description": "Starter project for an ES6 RESTful Express API",
+	"main": "index.js",
+	"private": false,
+	"engines": {
+		"node": "4.2.x",
+		"npm": "3.3.x"
+	},
+	"scripts": {
+		"start": "gulp serve",
+		"build": "gulp",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:KunalKapadia/express-es6-rest-api-starter.git"
+	},
+	"author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
+	"dependencies": {
+		"body-parser": "~1.13.2",
+		"compression": "^1.6.1",
+		"cookie-parser": "^1.4.1",
+		"cors": "^2.7.1",
+		"debug": "^2.2.0",
+		"dotenv": "^2.0.0",
+		"express": "~4.13.1",
+		"express-winston": "^1.2.0",
+		"http-status": "^0.2.0",
+		"method-override": "^2.3.5",
+		"morgan": "~1.6.1",
+		"winston": "^2.1.1"
+	},
+	"devDependencies": {
+		"babel": "^5.8.23",
+		"del": "^2.2.0",
+		"eslint": "^1.10.3",
+		"eslint-config-airbnb": "^4.0.0",
+		"gulp": "^3.9.0",
+		"gulp-babel": "^5.2.1",
+		"gulp-eslint": "^1.1.1",
+		"gulp-load-plugins": "^1.2.0",
+		"gulp-newer": "^1.1.0",
+		"gulp-nodemon": "^2.0.6",
+		"gulp-plumber": "^1.0.1",
+		"gulp-sourcemaps": "^1.6.0",
+		"run-sequence": "^1.1.5"
+	}
 }

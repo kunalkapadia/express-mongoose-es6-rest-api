@@ -38,6 +38,9 @@ DEBUG=express-es6-rest-api-starter:*
 
 # start server
 npm start or gulp serve (requires gulp to be installed globally)
+
+# prepare ES5 files for deployment. All ES5 files are saved in dist/ directory.
+npm build or gulp (requires gulp to be installed globally)
 ```
 
 ## Logging
