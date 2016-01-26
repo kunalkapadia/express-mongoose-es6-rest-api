@@ -11,7 +11,7 @@
   "scripts": {
     "start": "gulp serve",
     "build": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp mocha"
   },
   "repository": {
     "type": "git",
@@ -36,17 +36,25 @@
   },
   "devDependencies": {
     "babel": "^5.8.23",
+    "chai": "^3.4.1",
     "del": "^2.2.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
+    "gulp-env": "^0.4.0",
     "gulp-eslint": "^1.1.1",
+    "gulp-istanbul": "^0.10.3",
     "gulp-load-plugins": "^1.2.0",
+    "gulp-mocha": "^2.2.0",
     "gulp-newer": "^1.1.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-plumber": "^1.0.1",
     "gulp-sourcemaps": "^1.6.0",
-    "run-sequence": "^1.1.5"
+    "gulp-util": "^3.0.7",
+    "isparta": "^3.5.3",
+    "mocha": "^2.3.4",
+    "run-sequence": "^1.1.5",
+    "supertest": "^1.1.0"
   }
 }

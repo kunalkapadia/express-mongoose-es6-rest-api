@@ -18,3 +18,5 @@ const debug = require('debug')('express-mongoose-es6-rest-api:index');
 app.listen(config.HTTP_PORT, () => {
 	debug(`started server on port ${config.HTTP_PORT} (${config.NODE_ENV})`);
 });
+
+export default app;
