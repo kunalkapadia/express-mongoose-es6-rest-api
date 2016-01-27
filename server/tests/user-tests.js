@@ -48,7 +48,6 @@ describe('## User APIs', () => {
 					done();
 				});
 		});
-
 	});
 
 	describe('# PUT /api/users/:userId', () => {
