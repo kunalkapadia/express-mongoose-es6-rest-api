@@ -32,10 +32,7 @@ gulp.task('clean', () =>
 gulp.task('set-env', () => {
 	plugins.env({
 		vars: {
-			NODE_ENV: 'test',
-			HTTP_PORT: 3000,
-			db: 'mongodb://localhost/express-mongoose-es6-rest-api-test',
-			DEBUG: 'express-mongoose-es6-rest-api:*'
+			NODE_ENV: 'test'
 		}
 	});
 });

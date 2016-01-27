@@ -14,9 +14,9 @@ mongoose.connection.on('error', () => {
 
 const debug = require('debug')('express-mongoose-es6-rest-api:index');
 
-// listen on port HTTP_PORT
-app.listen(config.HTTP_PORT, () => {
-	debug(`started server on port ${config.HTTP_PORT} (${config.NODE_ENV})`);
+// listen on port port
+app.listen(config.port, () => {
+	debug(`started server on port ${config.port} (${config.env})`);
 });
 
 export default app;

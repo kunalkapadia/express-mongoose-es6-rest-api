@@ -6,13 +6,13 @@ import app from '../../index';
 
 chai.config.includeStack = true;
 
-describe('User APIs', () => {
+describe('## User APIs', () => {
 	let user = {
 		username: 'KK123',
 		mobileNumber: '1234567890'
 	};
 
-	describe('POST /api/users', () => {
+	describe('# POST /api/users', () => {
 		it('should create a new user', (done) => {
 			request(app)
 				.post('/api/users')

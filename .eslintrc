@@ -33,6 +33,9 @@
 		// TODO: turning on later
 		"comma-dangle": [
 			0
+		],
+		"one-var": [
+			0
 		]
 	},
 	"env": {

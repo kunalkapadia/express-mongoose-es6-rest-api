@@ -13,7 +13,6 @@ This is a boilerplate application for building REST APIs with ES6 and Express. H
 | ES2015 via Babel                  | ES2015 support using [Babel](https://babeljs.io/).  |
 | Code Linting               | JavaScript code linting is done using [ESLint](http://eslint.org) - a pluggable linter tool for identifying and reporting on patterns in JavaScript. Uses ESLint with [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb), which tries to follow the Airbnb JavaScript style guide.                                                                                                |
 | Auto server restart                  | Restart the server using [nodemon](https://github.com/remy/nodemon) in real-time anytime an edit is made, with babel compilation and eslint.                                                                                                                                                                            |
-| Environment variables           | Supports setting env variable using .env file at the root. Uses [dot-env](https://www.npmjs.com/package/dotenv) to enable this feature.                       |
 | Debugging via [debug](https://www.npmjs.com/package/debug)           | Instead of inserting and deleting console.log you can replace it with the debug function and just leave it there. You can then selectively debug portions of your code by setting DEBUG env variable. If DEBUG env variable is not set, nothing is displayed to the console.                       |
 
 - CORS support via [cors](https://github.com/troygoode/node-cors)
@@ -30,13 +29,9 @@ npm install
 # Make it your own
 rm -rf .git && git init && npm init
 
-# Set environment variables
-# Create .env file at the root path with below content
-NODE_ENV=development
-HTTP_PORT=3000
-
 # start server
 DEBUG=express-mongoose-es6-rest-api:* npm start or gulp serve (requires gulp to be installed globally)
+NODE_ENV=production npm start # start in production env
 
 # prepare ES5 files for deployment. All ES5 files are saved in dist/ directory.
 npm build or gulp (requires gulp to be installed globally)
