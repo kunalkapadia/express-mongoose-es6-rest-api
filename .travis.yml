@@ -1,10 +1,12 @@
-services:
-  - mongodb
 language: node_js
 node_js:
   - "4.2"
   - "5.5"
+services:
+  - mongodb
 git:
   depth: 3
+before_install:
+  - npm install -g codeclimate-test-reporter
 after_script:
   - codeclimate-test-reporter < lcov.info
