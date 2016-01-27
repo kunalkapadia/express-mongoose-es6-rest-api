@@ -6,3 +6,5 @@ node_js:
   - "5.5"
 git:
   depth: 3
+after_script:
+  - codeclimate-test-reporter < lcov.info
