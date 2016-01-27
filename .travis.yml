@@ -2,13 +2,15 @@ language: node_js
 node_js:
   - "4.2"
 
-git:
-  depth: 3
+services:
+  - mongodb
 
 env:
   - CXX=g++-4.8
-  - DB=mongodb
-  
+
+git:
+  depth: 3
+
 addons:
 apt:
   sources:
