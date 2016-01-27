@@ -1,4 +1,5 @@
 [![bitHound Overall Score](https://www.bithound.io/github/KunalKapadia/express-es6-rest-api-starter/badges/score.svg)](https://www.bithound.io/github/KunalKapadia/express-es6-rest-api-starter)
+[![bitHound Dependencies](https://www.bithound.io/github/KunalKapadia/express-mongoose-es6-rest-api/badges/dependencies.svg)](https://www.bithound.io/github/KunalKapadia/express-mongoose-es6-rest-api/master/dependencies/npm)
 [![Build Status](https://travis-ci.org/KunalKapadia/express-mongoose-es6-rest-api.svg?branch=master)](https://travis-ci.org/KunalKapadia/express-mongoose-es6-rest-api)
 
 # [![Express ES6 REST API Starter](https://cloud.githubusercontent.com/assets/4172932/12560514/3a678a08-c3c1-11e5-94b3-b4ce2cbd8e21.jpg)](https://github.com/KunalKapadia/express-es6-rest-api-starter)
@@ -60,8 +61,7 @@ Logs stacktrace of error to console along with other details. You should ideally
 Get code coverage summary on executing `npm test`
 ![Code Coverage Text Summary](https://cloud.githubusercontent.com/assets/4172932/12619174/f581647c-c53c-11e5-8b0f-f0764391bd45.JPG)
 
-Code coverage reports are saved in `coverage/` directory post `npm test` execution. Open `index.html` to view coverage reports.
-`npm test` also generates HTML report in `coverage/` directory. Open `lcov-report/index.html` to view code coverage report.
+`npm test` also generates HTML code coverage report in `coverage/` directory. Open `lcov-report/index.html` to view it.
 ![Code coverage HTML report](https://cloud.githubusercontent.com/assets/4172932/12625331/571a48fe-c559-11e5-8aa0-f9aacfb8c1cb.jpg)
 
 ## Deploy to Heroku
