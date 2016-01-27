@@ -9,4 +9,4 @@ git:
 before_install:
   - npm install -g codeclimate-test-reporter
 after_script:
-  - codeclimate-test-reporter < lcov.info
+  - codeclimate-test-reporter <  coverage/lcov.info
