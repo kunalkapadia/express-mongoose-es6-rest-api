@@ -38,6 +38,17 @@ describe('## User APIs', () => {
 					done();
 				});
 		});
+
+		it('should report error with message - Not found, when user does not exists', (done) => {
+			request(app)
+				.get('/api/users/56z787zzz67fc16zzz1a5e92')
+				.expect(httpStatus.NOT_FOUND)
+				.then(res => {
+					expect(res.body.message).to.equal('Not Found');
+					done();
+				});
+		});
+
 	});
 
 	describe('# PUT /api/users/:userId', () => {

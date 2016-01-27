@@ -56,10 +56,12 @@ app.use((req, res, next) => {
 	return next(err);
 });
 
-// log error in winston transports
-app.use(expressWinston.errorLogger({
-	winstonInstance
-}));
+// log error in winston transports except when executing test suite
+if (config.env !== 'test') {
+	app.use(expressWinston.errorLogger({
+		winstonInstance
+	}));
+}
 
 // error handler, send stacktrace only during development
 app.use((err, req, res, next) =>		// eslint-disable-line no-unused-vars
