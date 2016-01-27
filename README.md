@@ -1,10 +1,11 @@
 [![bitHound Overall Score](https://www.bithound.io/github/KunalKapadia/express-es6-rest-api-starter/badges/score.svg)](https://www.bithound.io/github/KunalKapadia/express-es6-rest-api-starter)
+[![Build Status](https://travis-ci.org/KunalKapadia/express-mongoose-es6-rest-api.svg?branch=master)](https://travis-ci.org/KunalKapadia/express-mongoose-es6-rest-api)
 
 # [![Express ES6 REST API Starter](https://cloud.githubusercontent.com/assets/4172932/12560514/3a678a08-c3c1-11e5-94b3-b4ce2cbd8e21.jpg)](https://github.com/KunalKapadia/express-es6-rest-api-starter)
 
 ## Overview
 
-This is a boilerplate application for building REST APIs with ES6 and Express. Helps you stay productive by following best practices. Follows [Airbnb's Javascript style guide](https://github.com/airbnb/javascript).
+This is a boilerplate application for building REST APIs using ES6 and Express with Code Coverage. Helps you stay productive by following best practices. Follows [Airbnb's Javascript style guide](https://github.com/airbnb/javascript).
 
 ### Features
 
@@ -13,7 +14,7 @@ This is a boilerplate application for building REST APIs with ES6 and Express. H
 | ES2015 via Babel                  	 | ES2015 support using [Babel](https://babeljs.io/).  |
 | Code Linting               			 | JavaScript code linting is done using [ESLint](http://eslint.org) - a pluggable linter tool for identifying and reporting on patterns in JavaScript. Uses ESLint with [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb), which tries to follow the Airbnb JavaScript style guide.                                                                                                |
 | Auto server restart                  	 | Restart the server using [nodemon](https://github.com/remy/nodemon) in real-time anytime an edit is made, with babel compilation and eslint.                                                                                                                                                                            |
-| ES6 Code Coverage via [istanbul](https://www.npmjs.com/package/istanbul)                  | Supports code coverage of ES6 code using istanbul and mocha. Get code coverage summary by executing `npm test`.  [Coming Soon HTML sample report]                                                                                                                                                                            |
+| ES6 Code Coverage via [istanbul](https://www.npmjs.com/package/istanbul)                  | Supports code coverage of ES6 code using istanbul and mocha. Code coverage reports are saved in `coverage/` directory post `npm test` execution. Open `lcov-report/index.html` to view coverage report. `npm test` also displays code coverage summary on console.                                                                                                                                                                            |
 | Debugging via [debug](https://www.npmjs.com/package/debug)           | Instead of inserting and deleting console.log you can replace it with the debug function and just leave it there. You can then selectively debug portions of your code by setting DEBUG env variable. If DEBUG env variable is not set, nothing is displayed to the console.                       |
 
 - CORS support via [cors](https://github.com/troygoode/node-cors)
@@ -57,9 +58,11 @@ Logs stacktrace of error to console along with other details. You should ideally
 
 ## Code Coverage
 Get code coverage summary on executing `npm test`
-![Code Coverage Summary](https://cloud.githubusercontent.com/assets/4172932/12619174/f581647c-c53c-11e5-8b0f-f0764391bd45.JPG)
+![Code Coverage Text Summary](https://cloud.githubusercontent.com/assets/4172932/12619174/f581647c-c53c-11e5-8b0f-f0764391bd45.JPG)
 
-`npm test` also generates HTML report in `coverage/` directory [Code coverage HTML report link coming soon]
+Code coverage reports are saved in `coverage/` directory post `npm test` execution. Open `index.html` to view coverage reports.
+`npm test` also generates HTML report in `coverage/` directory. Open `lcov-report/index.html` to view code coverage report.
+![Code coverage HTML report](https://cloud.githubusercontent.com/assets/4172932/12625331/571a48fe-c559-11e5-8aa0-f9aacfb8c1cb.jpg)
 
 ## Deploy to Heroku
 

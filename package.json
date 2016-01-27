@@ -1,7 +1,8 @@
 {
   "name": "express-mongoose-es6-rest-api",
-  "version": "0.2.0",
-  "description": "Starter project for an ES6 RESTful Express API",
+  "version": "0.3.0",
+  "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
+  "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
   "main": "index.js",
   "private": false,
   "engines": {
@@ -17,7 +18,16 @@
     "type": "git",
     "url": "git@github.com:KunalKapadia/express-mongoose-es6-rest-api.git"
   },
-  "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
+  "keywords": [
+	"express",
+  	"node",
+  	"mongoose",
+  	"es6",
+  	"mocha",
+  	"istanbul",
+  	"REST",
+  	"API"
+  ],
   "dependencies": {
     "bluebird": "^3.1.4",
     "body-parser": "^1.14.2",
@@ -57,5 +67,6 @@
     "run-sequence": "^1.1.5",
     "supertest": "^1.1.0",
     "supertest-as-promised": "^2.0.2"
-  }
+  },
+  "license": "MIT"
 }
