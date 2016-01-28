@@ -1,13 +1,13 @@
 import { User } from '../models';
 
-export function get(req, res, next, id) {
+export function load(req, res, next, id) {
 	User.get(id).then((user) => {
 		req.user = user;		// eslint-disable-line no-param-reassign
 		return next();
 	}).error((e) => next(e));
 }
 
-export function getById(req, res) {
+export function get(req, res) {
 	return res.json(req.user);
 }
 
@@ -33,7 +33,8 @@ export function update(req, res, next) {
 }
 
 export function list(req, res, next) {
-	User.list().then((users) =>	res.json(users))
+	const { limit = 50, skip = 0 } = req.query;
+	User.list({ limit, skip }).then((users) =>	res.json(users))
 		.error((e) => next(e));
 }
 

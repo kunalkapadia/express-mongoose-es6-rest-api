@@ -8,10 +8,10 @@ router.route('/')
 	.post(userCtrl.create);
 
 router.route('/:userId')
-	.get(userCtrl.getById)
+	.get(userCtrl.get)
 	.put(userCtrl.update)
 	.delete(userCtrl.remove);
 
-router.param('userId', userCtrl.get);
+router.param('userId', userCtrl.load);
 
 export default router;
