@@ -3,7 +3,7 @@ import User from '../models/user';
 /**
  * Load user and append to req.
  */
-export function load(req, res, next, id) {
+function load(req, res, next, id) {
 	User.get(id).then((user) => {
 		req.user = user;		// eslint-disable-line no-param-reassign
 		return next();
@@ -14,7 +14,7 @@ export function load(req, res, next, id) {
  * Get user
  * @returns {User}
  */
-export function get(req, res) {
+function get(req, res) {
 	return res.json(req.user);
 }
 
@@ -24,7 +24,7 @@ export function get(req, res) {
  * @property {string} req.body.mobileNumber - The mobileNumber of user.
  * @returns {User}
  */
-export function create(req, res, next) {
+function create(req, res, next) {
 	const user = new User({
 		username: req.body.username,
 		mobileNumber: req.body.mobileNumber
@@ -41,7 +41,7 @@ export function create(req, res, next) {
  * @property {string} req.body.mobileNumber - The mobileNumber of user.
  * @returns {User}
  */
-export function update(req, res, next) {
+function update(req, res, next) {
 	const user = req.user;
 	user.username = req.body.username;
 	user.mobileNumber = req.body.mobileNumber;
@@ -57,7 +57,7 @@ export function update(req, res, next) {
  * @property {number} req.query.limit - Limit number of users to be returned.
  * @returns {User[]}
  */
-export function list(req, res, next) {
+function list(req, res, next) {
 	const { limit = 50, skip = 0 } = req.query;
 	User.list({ limit, skip }).then((users) =>	res.json(users))
 		.error((e) => next(e));
@@ -67,9 +67,11 @@ export function list(req, res, next) {
  * Delete user.
  * @returns {User}
  */
-export function remove(req, res, next) {
+function remove(req, res, next) {
 	const user = req.user;
 	user.removeAsync()
 		.then((deletedUser) => res.json(deletedUser))
 		.error((e) => next(e));
 }
+
+export default { load, get, create, update, list, remove };

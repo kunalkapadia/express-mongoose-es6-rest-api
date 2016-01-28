@@ -1,5 +1,5 @@
 import express from 'express';
-import * as userCtrl from '../controllers/user';
+import userCtrl from '../controllers/user';
 
 const router = express.Router();	// eslint-disable-line new-cap
 
