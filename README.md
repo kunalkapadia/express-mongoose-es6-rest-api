@@ -4,7 +4,7 @@
 [![bitHound Overall Score](https://www.bithound.io/github/KunalKapadia/express-es6-rest-api-starter/badges/score.svg)](https://www.bithound.io/github/KunalKapadia/express-es6-rest-api-starter)
 [![bitHound Dependencies](https://www.bithound.io/github/KunalKapadia/express-mongoose-es6-rest-api/badges/dependencies.svg)](https://www.bithound.io/github/KunalKapadia/express-mongoose-es6-rest-api/master/dependencies/npm)
 
-# [![Express ES6 REST API Starter](https://cloud.githubusercontent.com/assets/4172932/12560514/3a678a08-c3c1-11e5-94b3-b4ce2cbd8e21.jpg)](https://github.com/KunalKapadia/express-es6-rest-api-starter)
+# [![Express ES6 REST API Starter](https://cloud.githubusercontent.com/assets/4172932/12660480/f42aefd2-c639-11e5-8dfa-a26da868e7ee.jpg)](https://github.com/KunalKapadia/express-es6-rest-api-starter)
 
 ## Overview
 
