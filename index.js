@@ -14,7 +14,7 @@ mongoose.connection.on('error', () => {
 
 const debug = require('debug')('express-mongoose-es6-rest-api:index');
 
-// listen on port port
+// listen on port config.port
 app.listen(config.port, () => {
 	debug(`started server on port ${config.port} (${config.env})`);
 });

@@ -3,12 +3,12 @@ import userRoutes from './user';
 
 const router = express.Router();	// eslint-disable-line new-cap
 
-/* GET home page. */
+/** GET /health-check - Check service health */
 router.get('/health-check', (req, res) =>
 	res.send('OK')
 );
 
-// mount all routes here
+// mount user routes at /users
 router.use('/users', userRoutes);
 
 export default router;
