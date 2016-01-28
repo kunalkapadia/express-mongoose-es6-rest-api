@@ -1,4 +1,4 @@
-import { User } from '../models';
+import User from '../models/user';
 
 export function load(req, res, next, id) {
 	User.get(id).then((user) => {
