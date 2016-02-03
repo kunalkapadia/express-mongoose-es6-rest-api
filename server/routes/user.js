@@ -1,4 +1,6 @@
 import express from 'express';
+import validate from 'express-validation';
+import paramValidation from '../../config/param-validation';
 import userCtrl from '../controllers/user';
 
 const router = express.Router();	// eslint-disable-line new-cap
@@ -8,14 +10,14 @@ router.route('/')
 	.get(userCtrl.list)
 
 	/** POST /api/users - Create new user */
-	.post(userCtrl.create);
+	.post(validate(paramValidation.createUser), userCtrl.create);
 
 router.route('/:userId')
 	/** GET /api/users/:userId - Get user */
 	.get(userCtrl.get)
 
 	/** PUT /api/users/:userId - Update user */
-	.put(userCtrl.update)
+	.put(validate(paramValidation.updateUser), userCtrl.update)
 
 	/** DELETE /api/users/:userId - Delete user */
 	.delete(userCtrl.remove);

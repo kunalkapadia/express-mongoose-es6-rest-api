@@ -7,6 +7,7 @@ import methodOverride from 'method-override';
 import cors from 'cors';
 import httpStatus from 'http-status';
 import expressWinston from 'express-winston';
+import expressValidation from 'express-validation';
 import winstonInstance from './winston';
 import routes from '../server/routes';
 import config from './env';
@@ -46,7 +47,12 @@ app.use('/api', routes);
 
 // if error is not an instanceOf APIError, convert it.
 app.use((err, req, res, next) => {
-	if (!(err instanceof APIError)) {
+	if (err instanceof expressValidation.ValidationError) {
+		// validation error contains errors which is an array of error each containing message[]
+		const unifiedErrorMessage = err.errors.map(error => error.messages.join('. ')).join(' and ');
+		const error = new APIError(unifiedErrorMessage, err.status, true);
+		return next(error);
+	} else if (!(err instanceof APIError)) {
 		const apiError = new APIError(err.message, err.status, err.isPublic);
 		return next(apiError);
 	}
