@@ -38,7 +38,7 @@ gulp.task('set-env', () => {
 });
 
 // Lint Javascript
-gulp.task('eslint', () =>
+gulp.task('lint', () =>
 	gulp.src(paths.js)
 		// eslint() attaches the lint output to the "eslint" property
 		// of the file object so it can be used by other modules.
@@ -71,12 +71,12 @@ gulp.task('babel', () =>
 );
 
 // Start server with restart on file changes
-gulp.task('nodemon', ['eslint', 'babel'], () =>
+gulp.task('nodemon', ['lint', 'babel'], () =>
 	plugins.nodemon({
 		script: path.join('dist', 'index.js'),
 		ext: 'js',
 		ignore: ['node_modules/**/*.js', 'dist/**/*.js'],
-		tasks: ['eslint', 'babel']
+		tasks: ['lint', 'babel']
 	})
 );
 
