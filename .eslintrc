@@ -30,11 +30,8 @@
 			2,
 			"nofunc"
 		],
-		// TODO: turning on later
+		// TODO: turn on later
 		"comma-dangle": [
-			0
-		],
-		"one-var": [
 			0
 		]
 	},
