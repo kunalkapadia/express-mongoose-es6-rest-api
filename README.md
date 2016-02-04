@@ -29,26 +29,52 @@ This is a boilerplate application for building REST APIs in Node.js using ES6 an
 
 ## Getting Started
 
+Clone the repo:
 ```
-# clone it
 git clone git@github.com:KunalKapadia/express-mongoose-es6-rest-api.git
 cd express-mongoose-es6-rest-api
+```
+
+Install dependencies:
+```
 npm install
+```
 
-# Make it your own
-rm -rf .git && git init && npm init
+Start server:
+```
+# set DEBUG env variable to get debug logs
+DEBUG=express-mongoose-es6-rest-api:* npm start
+OR
+# requires gulp to be installed globally
+npm install -g gulp
+gulp serve
 
-# start server
-DEBUG=express-mongoose-es6-rest-api:* npm start or gulp serve (requires gulp to be installed globally)
-NODE_ENV=production npm start # start in production env
+# start in production environment
+NODE_ENV=production npm start
+```
 
-# test with code coverage
-npm test
-# code coverage for each file as text
+Execute tests:
+```
+# compile with babel and run tests
+npm test (or gulp mocha)
+
+# use --code-coverage-reporter text to get code coverage for each file
 gulp mocha --code-coverage-reporter text
+```
 
-# prepare ES5 files for deployment. All ES5 files are saved in dist/ directory.
-npm build or gulp (requires gulp to be installed globally)
+Other gulp tasks:
+```
+# Wipe out dist and coverage directory
+gulp clean
+# Lint code with ESLint
+gulp lint
+# Default task: Wipes out dist and coverage direcotory. Compiles using babel.
+gulp
+```
+
+Make it your own:
+```
+rm -rf .git && git init && npm init
 ```
 
 ## Logging
