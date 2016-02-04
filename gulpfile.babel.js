@@ -17,8 +17,8 @@ const options = {
 	codeCoverage: {
 		reporters: ['lcov', 'text-summary'],
 		thresholds: {
-			global: { statements: 10, branches: 10, lines: 10, functions: 10 },
-			each: { statements: 0, branches: 0, lines: 0, functions: 0 }
+			global: { statements: 80, branches: 80, functions: 80, lines: 80 },
+			each: { statements: 50, branches: 50, functions: 50, lines: 50 }
 		}
 	}
 };

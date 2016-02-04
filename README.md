@@ -44,7 +44,7 @@ Start server:
 ```sh
 # set DEBUG env variable to get debug logs
 DEBUG=express-mongoose-es6-rest-api:* npm start
-OR
+# OR
 # requires gulp to be installed globally
 npm install -g gulp
 gulp serve
