@@ -10,6 +10,7 @@ const plugins = gulpLoadPlugins();
 
 const paths = {
 	js: ['./**/*.js', '!dist/**', '!node_modules/**', '!coverage/**'],
+	nonJs: ['./package.json', './.gitignore'],
 	tests: './server/tests/*.js'
 };
 
@@ -23,7 +24,7 @@ const options = {
 	}
 };
 
-// Clean up dist files
+// Clean up dist and coverage directory
 gulp.task('clean', () =>
 	del(['dist/**', 'coverage/**', '!dist', '!coverage'])
 );
@@ -51,6 +52,13 @@ gulp.task('lint', () =>
 		.pipe(plugins.eslint.failAfterError())
 );
 
+// Copy non-js files to dist
+gulp.task('copy', () =>
+	gulp.src(paths.nonJs)
+		.pipe(plugins.newer('dist'))
+		.pipe(gulp.dest('dist'))
+);
+
 // Compile ES6 to ES5 and copy to dist
 gulp.task('babel', () =>
 	gulp.src([...paths.js, '!gulpfile.babel.js'], { base: '.' })
@@ -71,12 +79,12 @@ gulp.task('babel', () =>
 );
 
 // Start server with restart on file changes
-gulp.task('nodemon', ['lint', 'babel'], () =>
+gulp.task('nodemon', ['lint', 'copy', 'babel'], () =>
 	plugins.nodemon({
 		script: path.join('dist', 'index.js'),
 		ext: 'js',
 		ignore: ['node_modules/**/*.js', 'dist/**/*.js'],
-		tasks: ['lint', 'babel']
+		tasks: ['lint', 'copy', 'babel']
 	})
 );
 
@@ -132,20 +140,20 @@ gulp.task('test', ['pre-test', 'set-env'], () => {
 		});
 });
 
-// Run mocha with clean up, copy and babel compilation
-// gulp mocha --env test
+// clean dist, compile js files, copy non-js files and execute tests
 gulp.task('mocha', ['clean'], () => {
 	runSequence(
-		'babel',
+		['copy', 'babel'],
 		'test'
 	);
 });
 
-gulp.task('serve', ['clean'], () => {
-	runSequence('nodemon');
-});
+// gulp serve for development
+gulp.task('serve', ['clean'], () => runSequence('nodemon'));
 
-// clean and compile files, the default task
+// default task: clean dist, compile js files and copy non-js files.
 gulp.task('default', ['clean'], () => {
-	runSequence('babel');
+	runSequence(
+		['copy', 'babel']
+	);
 });
