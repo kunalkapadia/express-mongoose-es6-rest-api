@@ -27,6 +27,9 @@ app.use(cookieParser());
 app.use(compress());
 app.use(methodOverride());
 
+// disable 'X-Powered-By' header in response
+app.disable('x-powered-by');
+
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
 
