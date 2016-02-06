@@ -3,9 +3,9 @@ engines:
     enabled: true
 ratings:
    paths:
-   - "server/**"
-   - "config/**"
+   - server/**
+   - config/**
    - "**.js"
 exclude_paths:
-- node_modules/**
+- node_modules/**/*
 - server/tests/**
