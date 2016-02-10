@@ -12,22 +12,23 @@
   "scripts": {
     "start": "gulp serve",
     "build": "gulp",
-    "test": "gulp mocha"
+    "test": "gulp mocha",
+    "report-coverage": "coveralls < ./coverage/lcov.info"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:KunalKapadia/express-mongoose-es6-rest-api.git"
   },
   "keywords": [
-	"express",
-  	"node",
-  	"mongoose",
-  	"es6",
-  	"mocha",
-  	"istanbul",
-  	"REST",
-  	"API",
-  	"boilerplate"
+    "express",
+    "node",
+    "mongoose",
+    "es6",
+    "mocha",
+    "istanbul",
+    "REST",
+    "API",
+    "boilerplate"
   ],
   "dependencies": {
     "bluebird": "^3.1.4",
@@ -48,6 +49,7 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "chai": "^3.4.1",
+    "coveralls": "^2.11.6",
     "del": "^2.2.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
