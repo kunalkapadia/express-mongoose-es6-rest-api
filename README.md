@@ -65,6 +65,12 @@ npm test (or gulp mocha)
 gulp mocha --code-coverage-reporter text
 ```
 
+Commit:
+```sh
+# Lints and execute tests before committing code. Uses commitizen to follow commit message convention.
+npm run commit
+```
+
 Other gulp tasks:
 ```sh
 # Wipe out dist and coverage directory
@@ -75,11 +81,6 @@ gulp lint
 
 # Default task: Wipes out dist and coverage directory. Compiles using babel.
 gulp
-```
-
-Make it your own:
-```sh
-rm -rf .git && git init && npm init
 ```
 
 ## Logging

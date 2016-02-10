@@ -25,6 +25,8 @@
   "keywords": [
     "express",
     "node",
+		"node.js",
+		"mongodb",
     "mongoose",
     "es6",
     "mocha",
