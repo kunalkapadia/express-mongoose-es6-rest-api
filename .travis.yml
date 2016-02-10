@@ -4,7 +4,12 @@ node_js:
   - "5.5"
 services:
   - mongodb
+cache:
+  directories:
+    - node_modules
 git:
   depth: 3
+before_script:
+  - npm prune
 after_script:
   - npm run report-coverage
