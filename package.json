@@ -41,6 +41,7 @@
     "express-validation": "^0.4.5",
     "express-winston": "^1.2.0",
     "http-status": "^0.2.0",
+    "joi": "^7.2.3",
     "lodash": "^4.0.1",
     "method-override": "^2.3.5",
     "mongoose": "^4.3.7",
