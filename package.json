@@ -12,7 +12,10 @@
   "scripts": {
     "start": "gulp serve",
     "build": "gulp",
+		"lint": "gulp lint",
     "test": "gulp mocha",
+    "precommit": "npm run lint && npm test",
+    "commit": "git-cz",
     "report-coverage": "coveralls < ./coverage/lcov.info"
   },
   "repository": {
@@ -51,7 +54,9 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "chai": "^3.4.1",
+    "commitizen": "2.5.0",
     "coveralls": "^2.11.6",
+    "cz-conventional-changelog": "1.1.5",
     "del": "^2.2.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
@@ -73,5 +78,10 @@
     "supertest": "^1.1.0",
     "supertest-as-promised": "^2.0.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
