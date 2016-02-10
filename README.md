@@ -13,6 +13,8 @@
 
 This is a boilerplate application for building REST APIs in Node.js using ES6 and Express with Code Coverage. Helps you stay productive by following best practices. Follows [Airbnb's Javascript style guide](https://github.com/airbnb/javascript).
 
+Heavily inspired from [Egghead.io - How to Write an Open Source JavaScript Library](https://egghead.io/series/how-to-write-an-open-source-javascript-library).
+
 ### Features
 
 | Feature                                | Summary                                                                                                                                                                                                                                                     |
