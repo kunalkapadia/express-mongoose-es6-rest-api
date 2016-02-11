@@ -106,6 +106,18 @@ Get code coverage summary on executing `npm test`
 
 Coming soon.
 
+## Deploy to Dokku
+
+Assuming you have an installation:
+```sh
+git remote add dokku dokku:chill-server
+dokku apps:create app-name
+dokku mongo:create  app-name
+dokku mongo:link app-name
+dokku config:set chill-server NODE_ENV=production
+gulp deploy
+```
+
 ## A Boilerplate-only Option
 
 If you would prefer not to use any of our tooling, delete the following files from the project: `package.json`, `gulpfile.babel.js`, `.eslintrc` and `.travis.yml`. You can now safely use the boilerplate with an alternative build-system or no build-system at all if you choose.

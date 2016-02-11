@@ -10,9 +10,9 @@
     "npm": "3.3.x"
   },
   "scripts": {
-    "start": "gulp serve",
+    "start": "node index.js",
     "build": "gulp",
-		"lint": "gulp lint",
+    "lint": "gulp lint",
     "test": "gulp mocha",
     "precommit": "npm run lint && npm test",
     "commit": "git-cz",
@@ -25,8 +25,8 @@
   "keywords": [
     "express",
     "node",
-		"node.js",
-		"mongodb",
+    "node.js",
+    "mongodb",
     "mongoose",
     "es6",
     "mocha",
@@ -64,6 +64,7 @@
     "eslint-config-airbnb": "^4.0.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
+    "gulp-clean": "^0.3.1",
     "gulp-env": "^0.4.0",
     "gulp-eslint": "^1.1.1",
     "gulp-istanbul": "^0.10.3",
@@ -73,6 +74,7 @@
     "gulp-nodemon": "^2.0.6",
     "gulp-plumber": "^1.0.1",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-subtree": "^0.1.0",
     "gulp-util": "^3.0.7",
     "isparta": "^3.5.3",
     "mocha": "^2.3.4",
