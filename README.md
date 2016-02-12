@@ -66,12 +66,6 @@ npm test (or gulp mocha)
 gulp mocha --code-coverage-reporter text
 ```
 
-Commit:
-```sh
-# Lints and execute tests before committing code. Uses commitizen to follow commit message convention.
-npm run commit
-```
-
 Other gulp tasks:
 ```sh
 # Wipe out dist and coverage directory
@@ -82,6 +76,17 @@ gulp lint
 
 # Default task: Wipes out dist and coverage directory. Compiles using babel.
 gulp
+```
+
+##### Commit:
+
+Follows [AngularJS's commit message convention](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines)
+```sh
+# Lint and execute tests before committing code.
+npm run commit
+# OR
+# use git commit directly with correct message convention.
+git commit -m "chore(ghooks): Add pre-commit and commit-msg ghook"
 ```
 
 ## Logging

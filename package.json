@@ -14,7 +14,6 @@
     "build": "gulp",
 		"lint": "gulp lint",
     "test": "gulp mocha",
-    "precommit": "npm run lint && npm test",
     "commit": "git-cz",
     "report-coverage": "coveralls < ./coverage/lcov.info"
   },
@@ -62,6 +61,7 @@
     "del": "^2.2.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
+    "ghooks": "1.0.3",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
     "gulp-env": "^0.4.0",
@@ -78,10 +78,15 @@
     "mocha": "^2.3.4",
     "run-sequence": "^1.1.5",
     "supertest": "^1.1.0",
-    "supertest-as-promised": "^2.0.2"
+    "supertest-as-promised": "^2.0.2",
+    "validate-commit-msg": "2.0.0"
   },
   "license": "MIT",
   "config": {
+    "ghooks": {
+      "pre-commit": "npm run lint && npm test",
+			"commit-msg": "validate-commit-msg"
+    },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
