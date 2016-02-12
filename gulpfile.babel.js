@@ -3,7 +3,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import path from 'path';
 import del from 'del';
 import runSequence from 'run-sequence';
-import babelCompiler from 'babel/register';
+import babelCompiler from 'babel-core/register';
 import * as isparta from 'isparta';
 
 const plugins = gulpLoadPlugins();
