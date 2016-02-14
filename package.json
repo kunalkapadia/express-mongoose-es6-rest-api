@@ -10,7 +10,7 @@
     "npm": "3.3.x"
   },
   "scripts": {
-    "start": "gulp serve",
+    "start": "node index.js",
     "build": "gulp",
     "lint": "gulp lint",
     "test": "gulp mocha",
@@ -76,6 +76,7 @@
     "gulp-nodemon": "^2.0.6",
     "gulp-plumber": "^1.0.1",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-subtree": "^0.1.0",
     "gulp-util": "^3.0.7",
     "isparta": "4.0.0",
     "mocha": "^2.3.4",

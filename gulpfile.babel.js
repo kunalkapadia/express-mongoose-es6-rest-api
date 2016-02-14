@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import subtree from 'gulp-subtree';
 import path from 'path';
 import del from 'del';
 import runSequence from 'run-sequence';
@@ -155,5 +156,22 @@ gulp.task('serve', ['clean'], () => runSequence('nodemon'));
 gulp.task('default', ['clean'], () => {
 	runSequence(
 		['copy', 'babel']
+	);
+});
+
+// push our es2015 code to dokku
+gulp.task('push-dokku', () =>
+	gulp.src('dist')
+		.pipe(subtree({
+			remote: 'dokku',
+			branch: 'master',
+			message: 'Distribution commit'
+		}))
+	);
+
+// build and send to dokku * this flow should be improved *
+gulp.task('deploy', () => {
+	runSequence(
+		['copy', 'babel', 'push-dokku', 'clean']
 	);
 });
