@@ -4,11 +4,12 @@ node_js:
   - "5.5"
 services:
   - mongodb
+cache:
+  directories:
+  - node
 git:
   depth: 3
 before_script:
   - npm prune
-before_install:
-  - npm install babel-core
 after_script:
   - npm run report-coverage
