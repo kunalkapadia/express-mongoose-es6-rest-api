@@ -65,10 +65,6 @@ gulp.task('babel', () =>
 		.pipe(plugins.newer('dist'))
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.babel())
-		.on('error', (err) => {
-			plugins.util.log(err);
-			process.exit(1);
-		})
 		.pipe(plugins.sourcemaps.write('.', {
 			includeContent: false,
 			sourceRoot(file) {
@@ -121,7 +117,7 @@ gulp.task('test', ['pre-test', 'set-env'], () => {
 				js: babelCompiler
 			}
 		}))
-		.on('error', (err) => {
+		.once('error', (err) => {
 			plugins.util.log(err);
 			exitCode = 1;
 		})
@@ -134,7 +130,7 @@ gulp.task('test', ['pre-test', 'set-env'], () => {
 		.pipe(plugins.istanbul.enforceThresholds({
 			thresholds: options.codeCoverage.thresholds
 		}))
-		.on('end', () => {
+		.once('end', () => {
 			plugins.util.log('completed !!');
 			process.exit(exitCode);
 		});
