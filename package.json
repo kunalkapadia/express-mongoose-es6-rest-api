@@ -1,6 +1,6 @@
 {
   "name": "express-mongoose-es6-rest-api",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
   "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
   "main": "index.js",
