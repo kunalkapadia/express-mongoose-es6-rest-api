@@ -7,18 +7,6 @@
 				"SwitchCase": 1
 			}
 		],
-		"quotes": [
-			2,
-			"single"
-		],
-		/*"linebreak-style": [
-			2,
-			"windows"
-		],*/
-		"semi": [
-			2,
-			"always"
-		],
 		"space-before-function-paren": [
 			2,
 			{
