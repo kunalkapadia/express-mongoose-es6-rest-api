@@ -50,11 +50,8 @@ Start server:
 DEBUG=express-mongoose-es6-rest-api:* npm start
 # OR
 # requires gulp to be installed globally
-npm install -g gulp
+npm i -g gulp
 gulp serve
-
-# start in production environment
-NODE_ENV=production npm start
 ```
 
 Execute tests:
@@ -89,6 +86,25 @@ npm run commit
 git commit -m "chore(ghooks): Add pre-commit and commit-msg ghook"
 ```
 
+##### Deployment
+
+```sh
+# compile to ES5
+1. npm build or gulp
+
+# upload dist/ to your server
+2. scp -rp dist/ user@dest:/path
+
+# install production dependencies only
+3. npm i --production
+
+# Use any process manager to start your services
+4. pm2 start index.js
+```
+
+In production you need to make sure your server is always up so you should ideally use any of the process manager recommended [here](http://expressjs.com/en/advanced/pm.html).
+We recommend [pm2](http://pm2.keymetrics.io/) as it has several useful features like it can be configured to auto-start your services if system is rebooted.
+
 ## Logging
 
 Universal logging library [winston](https://www.npmjs.com/package/winston) is used for logging. It has support for multiple transports.  A transport is essentially a storage device for your logs. Each instance of a winston logger can have multiple transports configured at different levels. For example, one may want error logs to be stored in a persistent remote location (like a database), but all logs output to the console or a local file. We just log to the console for simplicity, you can configure more transports as per your requirement.
@@ -107,10 +123,6 @@ Get code coverage summary on executing `npm test`
 
 `npm test` also generates HTML code coverage report in `coverage/` directory. Open `lcov-report/index.html` to view it.
 ![Code coverage HTML report](https://cloud.githubusercontent.com/assets/4172932/12625331/571a48fe-c559-11e5-8aa0-f9aacfb8c1cb.jpg)
-
-## Deploy to Heroku
-
-Coming soon.
 
 ## A Boilerplate-only Option
 
