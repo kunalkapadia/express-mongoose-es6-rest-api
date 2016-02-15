@@ -6,7 +6,7 @@ services:
   - mongodb
 cache:
   directories:
-  - node
+  - node_modules
 git:
   depth: 3
 before_script:
