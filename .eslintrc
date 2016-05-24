@@ -1,34 +1,71 @@
 {
-	"rules": {
-		"indent": [
-			2,
-			"tab",
-			{
-				"SwitchCase": 1
-			}
-		],
-		"space-before-function-paren": [
-			2,
-			{
-				"anonymous": "always",
-				"named": "never"
-			}
-		],
-		"no-use-before-define": [
-			2,
-			"nofunc"
-		],
-		// TODO: turn on later
-		"comma-dangle": [
-			0
-		]
-	},
-	"env": {
-		"node": true,
-		"mocha": true
-	},
-	"extends": [
-		"eslint:recommended",
-		"airbnb/base"
-	]
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    "no-undef": 0,
+    "no-use-before-define": ["error", { "functions": true, "classes": true }],
+    "array-bracket-spacing": [2, "never"],
+    "arrow-parens": [2, "always"],
+    "block-spacing": [2, "always"],
+    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
+    "camelcase": [2, {"properties": "always"}],
+    "comma-dangle": [2, "never"],
+    "comma-spacing": [2, {"before": false, "after": true}],
+    "comma-style": [2, "last"],
+    "computed-property-spacing": [2, "never"],
+    "consistent-return": [0],
+    "dot-notation": [2],
+    "key-spacing": [2, {"beforeColon": false, "afterColon": true}],
+    "keyword-spacing": [2],
+    "new-cap": [2],
+    "no-debugger": [2],
+    "no-dupe-args": 2,
+    "no-dupe-keys": 2,
+    "no-duplicate-case": 2,
+    "no-extra-boolean-cast": 2,
+    "no-extra-semi": 2,
+    "no-func-assign": 2,
+    "no-unreachable": 2,
+    "no-multi-spaces": [0],
+    "no-multi-str": 0,
+    "no-trailing-spaces": [2],
+    "no-mixed-spaces-and-tabs": [2],
+    "no-restricted-syntax": [2, "WithStatement"],
+    "no-spaced-func": 2,
+    "no-empty": 2,
+    "no-shadow": [0],
+    "no-var": [2],
+    "no-unneeded-ternary": 2,
+    "no-cond-assign": 2,
+    "no-const-assign": [2],
+    "no-unused-vars": [2, {"vars": "all", "args": "none"}],
+    "no-unused-expressions": 2,
+    "object-curly-spacing": [2, "always"],
+    "prefer-const": [2],
+    "padded-blocks": [2, "never"],
+    "quotes": [2, "single", "avoid-escape"],
+    "quote-props": [2, "as-needed"],
+    "space-in-parens": [2, "never"],
+    "strict": [2, "never"],
+    "semi": [2, "always"],
+    "semi-spacing": [2, {"before": false, "after": true}],
+    "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}],
+    "space-before-blocks": 2,
+    "space-unary-ops": [2, { "words": true, "nonwords": false }],
+    "space-infix-ops": [2],
+    "use-isnan": 2,
+    "valid-typeof": 2,
+    "valid-jsdoc": 2,
+    "wrap-iife": [2, "outside"],
+    "yoda": [2, "never"],
+  }
 }

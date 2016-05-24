@@ -2,6 +2,11 @@ import User from '../models/user';
 
 /**
  * Load user and append to req.
+ * @param {object} req - Request.
+ * @param {object} res - Response.
+ * @param {object} next - Next Middleware.
+ * @param {string} id - User id.
+ * @return {object} - User Objects
  */
 function load(req, res, next, id) {
 	User.get(id).then((user) => {
@@ -12,7 +17,9 @@ function load(req, res, next, id) {
 
 /**
  * Get user
- * @returns {User}
+ * @param {object} req - Request.
+ * @param {object} res - Response.
+ * @return {object} - User Objects
  */
 function get(req, res) {
 	return res.json(req.user);
@@ -20,9 +27,10 @@ function get(req, res) {
 
 /**
  * Create new user
- * @property {string} req.body.username - The username of user.
- * @property {string} req.body.mobileNumber - The mobileNumber of user.
- * @returns {User}
+ * @param {object} req - Request.
+ * @param {object} res - Response.
+ * @param {object} next - Next Middleware.
+ * @return {User} - User's Object
  */
 function create(req, res, next) {
 	const user = new User({
@@ -37,9 +45,10 @@ function create(req, res, next) {
 
 /**
  * Update existing user
- * @property {string} req.body.username - The username of user.
- * @property {string} req.body.mobileNumber - The mobileNumber of user.
- * @returns {User}
+ * @param {object} req - Request.
+ * @param {object} res - Response.
+ * @param {object} next - Next Middleware.
+ * @return {User} - User's Object
  */
 function update(req, res, next) {
 	const user = req.user;
@@ -53,9 +62,10 @@ function update(req, res, next) {
 
 /**
  * Get user list.
- * @property {number} req.query.skip - Number of users to be skipped.
- * @property {number} req.query.limit - Limit number of users to be returned.
- * @returns {User[]}
+ * @param {object} req - Request.
+ * @param {object} res - Response.
+ * @param {object} next - Next Middleware.
+ * @return {User[]} - List of User's Objects
  */
 function list(req, res, next) {
 	const { limit = 50, skip = 0 } = req.query;
@@ -65,7 +75,10 @@ function list(req, res, next) {
 
 /**
  * Delete user.
- * @returns {User}
+ * @param {object} req - Request.
+ * @param {object} res - Response.
+ * @param {object} next - Next Middleware.
+ * @return {User} - User Object
  */
 function remove(req, res, next) {
 	const user = req.user;

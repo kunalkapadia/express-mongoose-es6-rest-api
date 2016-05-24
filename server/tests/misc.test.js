@@ -12,7 +12,7 @@ describe('## Misc', () => {
 			request(app)
 				.get('/api/health-check')
 				.expect(httpStatus.OK)
-				.then(res => {
+				.then((res) => {
 					expect(res.text).to.equal('OK');
 					done();
 				});
@@ -24,7 +24,7 @@ describe('## Misc', () => {
 			request(app)
 				.get('/api/404')
 				.expect(httpStatus.NOT_FOUND)
-				.then(res => {
+				.then((res) => {
 					expect(res.body.message).to.equal('Not Found');
 					done();
 				});
@@ -36,7 +36,7 @@ describe('## Misc', () => {
 			request(app)
 				.get('/api/users/56z787zzz67fc')
 				.expect(httpStatus.INTERNAL_SERVER_ERROR)
-				.then(res => {
+				.then((res) => {
 					expect(res.body.message).to.equal('Internal Server Error');
 					done();
 				});
@@ -49,8 +49,8 @@ describe('## Misc', () => {
 					mobileNumber: '1234567890'
 				})
 				.expect(httpStatus.BAD_REQUEST)
-				.then(res => {
-					expect(res.body.message).to.equal(`"username" is required`);
+				.then((res) => {
+					expect(res.body.message).to.equal('"username" is required');
 					done();
 				});
 		});
