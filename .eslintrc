@@ -1,34 +1,19 @@
 {
-	"rules": {
-		"indent": [
-			2,
-			"tab",
-			{
-				"SwitchCase": 1
-			}
-		],
-		"space-before-function-paren": [
-			2,
-			{
-				"anonymous": "always",
-				"named": "never"
-			}
-		],
-		"no-use-before-define": [
-			2,
-			"nofunc"
-		],
-		// TODO: turn on later
-		"comma-dangle": [
-			0
-		]
-	},
-	"env": {
-		"node": true,
-		"mocha": true
-	},
-	"extends": [
-		"eslint:recommended",
-		"airbnb/base"
-	]
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    "no-undef": 0,
+    "quotes": ["error", "single"],
+    "no-use-before-define": ["error", { "functions": true, "classes": true }],
+    "space-before-function-paren": ["error", "never"]
+  }
 }
