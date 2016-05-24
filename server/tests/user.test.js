@@ -18,7 +18,7 @@ describe('## User APIs', () => {
 				.post('/api/users')
 				.send(user)
 				.expect(httpStatus.OK)
-				.then(res => {
+				.then((res) => {
 					expect(res.body.username).to.equal(user.username);
 					expect(res.body.mobileNumber).to.equal(user.mobileNumber);
 					user = res.body;
@@ -32,7 +32,7 @@ describe('## User APIs', () => {
 			request(app)
 				.get(`/api/users/${user._id}`)
 				.expect(httpStatus.OK)
-				.then(res => {
+				.then((res) => {
 					expect(res.body.username).to.equal(user.username);
 					expect(res.body.mobileNumber).to.equal(user.mobileNumber);
 					done();
@@ -43,7 +43,7 @@ describe('## User APIs', () => {
 			request(app)
 				.get('/api/users/56c787ccc67fc16ccc1a5e92')
 				.expect(httpStatus.NOT_FOUND)
-				.then(res => {
+				.then((res) => {
 					expect(res.body.message).to.equal('Not Found');
 					done();
 				});
@@ -57,7 +57,7 @@ describe('## User APIs', () => {
 				.put(`/api/users/${user._id}`)
 				.send(user)
 				.expect(httpStatus.OK)
-				.then(res => {
+				.then((res) => {
 					expect(res.body.username).to.equal('KK');
 					expect(res.body.mobileNumber).to.equal(user.mobileNumber);
 					done();
@@ -70,7 +70,7 @@ describe('## User APIs', () => {
 			request(app)
 				.get('/api/users')
 				.expect(httpStatus.OK)
-				.then(res => {
+				.then((res) => {
 					expect(res.body).to.be.an('array');
 					done();
 				});
@@ -82,7 +82,7 @@ describe('## User APIs', () => {
 			request(app)
 				.delete(`/api/users/${user._id}`)
 				.expect(httpStatus.OK)
-				.then(res => {
+				.then((res) => {
 					expect(res.body.username).to.equal('KK');
 					expect(res.body.mobileNumber).to.equal(user.mobileNumber);
 					done();
