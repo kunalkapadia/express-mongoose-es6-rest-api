@@ -44,6 +44,7 @@
     "express": "4.14.0",
     "express-validation": "1.0.0",
     "express-winston": "^1.2.0",
+    "helmet": "2.1.1",
     "http-status": "^0.2.0",
     "joi": "8.4.2",
     "lodash": "^4.0.1",
