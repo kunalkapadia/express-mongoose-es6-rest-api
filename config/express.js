@@ -8,6 +8,7 @@ import cors from 'cors';
 import httpStatus from 'http-status';
 import expressWinston from 'express-winston';
 import expressValidation from 'express-validation';
+import helmet from 'helmet';
 import winstonInstance from './winston';
 import routes from '../server/routes';
 import config from './env';
@@ -27,8 +28,8 @@ app.use(cookieParser());
 app.use(compress());
 app.use(methodOverride());
 
-// disable 'X-Powered-By' header in response
-app.disable('x-powered-by');
+// secure apps by setting various HTTP headers
+app.use(helmet());
 
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
