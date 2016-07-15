@@ -32,6 +32,7 @@ Heavily inspired from [Egghead.io - How to Write an Open Source JavaScript Libra
 
 - CORS support via [cors](https://github.com/troygoode/node-cors)
 - Uses [http-status](https://www.npmjs.com/package/http-status) to set http status code. It is recommended to use `httpStatus.INTERNAL_SERVER_ERROR` instead of directly using `500` when setting status code.
+- Has `.editorconfig` which helps developers define and maintain consistent coding styles between different editors and IDEs.
 
 ## Getting Started
 
@@ -92,7 +93,7 @@ git commit -m "chore(ghooks): Add pre-commit and commit-msg ghook"
 
 ```sh
 # compile to ES5
-1. npm build or gulp
+1. npm run build or gulp
 
 # upload dist/ to your server
 2. scp -rp dist/ user@dest:/path
@@ -101,7 +102,7 @@ git commit -m "chore(ghooks): Add pre-commit and commit-msg ghook"
 3. npm i --production
 
 # Use any process manager to start your services
-4. pm2 start index.js
+4. pm2 start dist/index.js
 ```
 
 In production you need to make sure your server is always up so you should ideally use any of the process manager recommended [here](http://expressjs.com/en/advanced/pm.html).
