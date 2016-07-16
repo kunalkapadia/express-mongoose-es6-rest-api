@@ -2,7 +2,7 @@
 	"rules": {
 		"indent": [
 			2,
-			"tab",
+			2,
 			{
 				"SwitchCase": 1
 			}
