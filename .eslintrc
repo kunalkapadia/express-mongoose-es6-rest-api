@@ -1,34 +1,34 @@
 {
-	"rules": {
-		"indent": [
-			2,
-			2,
-			{
-				"SwitchCase": 1
-			}
-		],
-		"space-before-function-paren": [
-			2,
-			{
-				"anonymous": "always",
-				"named": "never"
-			}
-		],
-		"no-use-before-define": [
-			2,
-			"nofunc"
-		],
-		// TODO: turn on later
-		"comma-dangle": [
-			0
-		]
-	},
-	"env": {
-		"node": true,
-		"mocha": true
-	},
-	"extends": [
-		"eslint:recommended",
-		"airbnb/base"
-	]
+  "rules": {
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "space-before-function-paren": [
+      2,
+      {
+        "anonymous": "always",
+        "named": "never"
+      }
+    ],
+    "no-use-before-define": [
+      2,
+      "nofunc"
+    ],
+    // TODO: turn on later
+    "comma-dangle": [
+      0
+    ]
+  },
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb/base"
+  ]
 }
