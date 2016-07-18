@@ -4,10 +4,10 @@ import User from '../models/user';
  * Load user and append to req.
  */
 function load(req, res, next, id) {
-	User.get(id).then((user) => {
-		req.user = user;		// eslint-disable-line no-param-reassign
-		return next();
-	}).error((e) => next(e));
+  User.get(id).then((user) => {
+    req.user = user;		// eslint-disable-line no-param-reassign
+    return next();
+  }).error((e) => next(e));
 }
 
 /**
@@ -15,7 +15,7 @@ function load(req, res, next, id) {
  * @returns {User}
  */
 function get(req, res) {
-	return res.json(req.user);
+  return res.json(req.user);
 }
 
 /**
@@ -25,14 +25,14 @@ function get(req, res) {
  * @returns {User}
  */
 function create(req, res, next) {
-	const user = new User({
-		username: req.body.username,
-		mobileNumber: req.body.mobileNumber
-	});
+  const user = new User({
+    username: req.body.username,
+    mobileNumber: req.body.mobileNumber
+  });
 
-	user.saveAsync()
-		.then((savedUser) => res.json(savedUser))
-		.error((e) => next(e));
+  user.saveAsync()
+    .then((savedUser) => res.json(savedUser))
+    .error((e) => next(e));
 }
 
 /**
@@ -42,13 +42,13 @@ function create(req, res, next) {
  * @returns {User}
  */
 function update(req, res, next) {
-	const user = req.user;
-	user.username = req.body.username;
-	user.mobileNumber = req.body.mobileNumber;
+  const user = req.user;
+  user.username = req.body.username;
+  user.mobileNumber = req.body.mobileNumber;
 
-	user.saveAsync()
-		.then((savedUser) => res.json(savedUser))
-		.error((e) => next(e));
+  user.saveAsync()
+    .then((savedUser) => res.json(savedUser))
+    .error((e) => next(e));
 }
 
 /**
@@ -58,9 +58,9 @@ function update(req, res, next) {
  * @returns {User[]}
  */
 function list(req, res, next) {
-	const { limit = 50, skip = 0 } = req.query;
-	User.list({ limit, skip }).then((users) =>	res.json(users))
-		.error((e) => next(e));
+  const { limit = 50, skip = 0 } = req.query;
+  User.list({ limit, skip }).then((users) =>	res.json(users))
+    .error((e) => next(e));
 }
 
 /**
@@ -68,10 +68,10 @@ function list(req, res, next) {
  * @returns {User}
  */
 function remove(req, res, next) {
-	const user = req.user;
-	user.removeAsync()
-		.then((deletedUser) => res.json(deletedUser))
-		.error((e) => next(e));
+  const user = req.user;
+  user.removeAsync()
+    .then((deletedUser) => res.json(deletedUser))
+    .error((e) => next(e));
 }
 
 export default { load, get, create, update, list, remove };
