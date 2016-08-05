@@ -9,13 +9,13 @@
 [![MIT License](https://img.shields.io/npm/l/stack-overflow-copy-paste.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-# [![Express ES6 REST API Starter](https://cloud.githubusercontent.com/assets/4172932/12660610/90f5b856-c63a-11e5-878e-c9f0bbf33090.jpg)](https://github.com/KunalKapadia/express-es6-rest-api-starter)
+# [![Express ES6 REST API Starter](https://cloud.githubusercontent.com/assets/4172932/12660610/90f5b856-c63a-11e5-878e-c9f0bbf33090.jpg)](https://github.com/KunalKapadia/express-mongoose-es6-rest-api)
 
 ## Overview
 
 This is a boilerplate application for building REST APIs in Node.js using ES6 and Express with Code Coverage. Helps you stay productive by following best practices. Follows [Airbnb's Javascript style guide](https://github.com/airbnb/javascript).
 
-Heavily inspired from [Egghead.io - How to Write an Open Source JavaScript Library](https://egghead.io/series/how-to-write-an-open-source-javascript-library).
+Heavily inspired from [Egghead.io - How to Write an Open Source JavaScript Library](https://egghead.io/courses/how-to-write-an-open-source-javascript-library).
 
 ### Features
 
@@ -30,7 +30,7 @@ Heavily inspired from [Egghead.io - How to Write an Open Source JavaScript Libra
 | API parameter validation via [express-validation](https://www.npmjs.com/package/express-validation)           | Validate body, params, query, headers and cookies of a request (via middleware) and return a response with errors; if any of the configured validation rules fail. You won't anymore need to make your route handler dirty with such validations. |
 | Secure app via [helmet](https://github.com/helmetjs/helmet)           | Helmet helps secure Express apps by setting various HTTP headers. |
 
-- CORS support via [cors](https://github.com/troygoode/node-cors)
+- CORS support via [cors](https://github.com/expressjs/cors)
 - Uses [http-status](https://www.npmjs.com/package/http-status) to set http status code. It is recommended to use `httpStatus.INTERNAL_SERVER_ERROR` instead of directly using `500` when setting status code.
 - Has `.editorconfig` which helps developers define and maintain consistent coding styles between different editors and IDEs.
 
