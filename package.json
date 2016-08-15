@@ -47,7 +47,6 @@
     "helmet": "2.1.1",
     "http-status": "^0.2.0",
     "joi": "8.4.2",
-    "lodash": "^4.0.1",
     "method-override": "^2.3.5",
     "mongoose": "^4.3.7",
     "morgan": "1.7.0",
