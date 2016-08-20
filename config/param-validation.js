@@ -18,5 +18,13 @@ export default {
     params: {
       userId: Joi.string().hex().required()
     }
+  },
+
+  // POST /api/auth/login
+  login: {
+    body: {
+      username: Joi.string().required(),
+      password: Joi.string().required()
+    }
   }
 };
