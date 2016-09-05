@@ -139,3 +139,8 @@ If you would prefer not to use any of our tooling, delete the following files fr
 ## Contributing
 
 Contributions, questions and comments are all welcome and encouraged. For code contributions submit a pull request with unit test.
+
+## Meta
+
+Kunal Kapadia – [@kunalkapadia12](https://twitter.com/KunalKapadia12) – kunalkapadia12@gmail.com
+
