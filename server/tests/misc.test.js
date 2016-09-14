@@ -15,7 +15,8 @@ describe('## Misc', () => {
         .then(res => {
           expect(res.text).to.equal('OK');
           done();
-        });
+        })
+        .catch(done);
     });
   });
 
@@ -27,7 +28,8 @@ describe('## Misc', () => {
         .then(res => {
           expect(res.body.message).to.equal('Not Found');
           done();
-        });
+        })
+        .catch(done);
     });
   });
 
@@ -39,7 +41,8 @@ describe('## Misc', () => {
         .then(res => {
           expect(res.body.message).to.equal('Internal Server Error');
           done();
-        });
+        })
+        .catch(done);
     });
 
     it('should handle express validation error - username is required', (done) => {
@@ -52,7 +55,8 @@ describe('## Misc', () => {
         .then(res => {
           expect(res.body.message).to.equal(`"username" is required`);
           done();
-        });
+        })
+        .catch(done);
     });
   });
 });
