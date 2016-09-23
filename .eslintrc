@@ -21,14 +21,27 @@
     // TODO: turn on later
     "comma-dangle": [
       0
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "no-underscore-dangle": [
+      0
     ]
   },
   "env": {
     "node": true,
     "mocha": true
   },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
   "extends": [
     "eslint:recommended",
-    "airbnb/base"
+    "airbnb-base"
   ]
 }

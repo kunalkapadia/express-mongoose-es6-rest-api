@@ -37,20 +37,6 @@ gulp.task('set-env', () => {
   });
 });
 
-// Lint Javascript
-gulp.task('lint', () =>
-  gulp.src(paths.js)
-    // eslint() attaches the lint output to the "eslint" property
-    // of the file object so it can be used by other modules.
-    .pipe(plugins.eslint())
-    // eslint.format() outputs the lint results to the console.
-    // Alternatively use eslint.formatEach() (see Docs).
-    .pipe(plugins.eslint.format())
-    // To have the process exit with an error code (1) on
-    // lint error, return the stream and pipe to failAfterError last.
-    .pipe(plugins.eslint.failAfterError())
-);
-
 // Copy non-js files to dist
 gulp.task('copy', () =>
   gulp.src(paths.nonJs)
@@ -74,12 +60,12 @@ gulp.task('babel', () =>
 );
 
 // Start server with restart on file changes
-gulp.task('nodemon', ['lint', 'copy', 'babel'], () =>
+gulp.task('nodemon', ['copy', 'babel'], () =>
   plugins.nodemon({
     script: path.join('dist', 'index.js'),
     ext: 'js',
     ignore: ['node_modules/**/*.js', 'dist/**/*.js'],
-    tasks: ['lint', 'copy', 'babel']
+    tasks: ['copy', 'babel']
   })
 );
 
@@ -98,7 +84,7 @@ gulp.task('pre-test', () =>
 // triggers mocha test with code coverage
 gulp.task('test', ['pre-test', 'set-env'], () => {
   let reporters;
-  let	exitCode = 0;
+  let exitCode = 0;
 
   if (plugins.util.env['code-coverage-reporter']) {
     reporters = [...options.codeCoverage.reporters, plugins.util.env['code-coverage-reporter']];

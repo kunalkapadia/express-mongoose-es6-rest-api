@@ -5,7 +5,7 @@ import paramValidation from '../../config/param-validation';
 import authCtrl from '../controllers/auth';
 import config from '../../config/env';
 
-const router = express.Router();	// eslint-disable-line new-cap
+const router = express.Router(); // eslint-disable-line new-cap
 
 /** POST /api/auth/login - Returns token if correct username and password is provided */
 router.route('/login')
