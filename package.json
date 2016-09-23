@@ -12,7 +12,7 @@
   "scripts": {
     "start": "gulp serve",
     "build": "gulp",
-    "lint": "gulp lint",
+    "lint": "eslint *.js server/**/*.js config/**/*.js && echo Lint Passed ❤",
     "test": "gulp mocha",
     "commit": "git-cz",
     "report-coverage": "coveralls < ./coverage/lcov.info"
@@ -65,8 +65,9 @@
     "coveralls": "^2.11.6",
     "cz-conventional-changelog": "1.1.5",
     "del": "^2.2.0",
-    "eslint": "^1.10.3",
-    "eslint-config-airbnb": "5.0.1",
+    "eslint": "3.5.0",
+    "eslint-config-airbnb-base": "7.1.0",
+    "eslint-plugin-import": "1.16.0",
     "ghooks": "^1.2.4",
     "gulp": "3.9.1",
     "gulp-babel": "6.1.2",
