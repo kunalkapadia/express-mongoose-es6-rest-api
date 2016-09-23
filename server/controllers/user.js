@@ -4,10 +4,12 @@ import User from '../models/user';
  * Load user and append to req.
  */
 function load(req, res, next, id) {
-  User.get(id).then((user) => {
-    req.user = user;		// eslint-disable-line no-param-reassign
-    return next();
-  }).error((e) => next(e));
+  User.get(id)
+    .then((user) => {
+      req.user = user;		// eslint-disable-line no-param-reassign
+      return next();
+    })
+    .catch((e) => next(e));
 }
 
 /**
@@ -30,9 +32,9 @@ function create(req, res, next) {
     mobileNumber: req.body.mobileNumber
   });
 
-  user.saveAsync()
+  user.save()
     .then((savedUser) => res.json(savedUser))
-    .error((e) => next(e));
+    .catch((e) => next(e));
 }
 
 /**
@@ -46,9 +48,9 @@ function update(req, res, next) {
   user.username = req.body.username;
   user.mobileNumber = req.body.mobileNumber;
 
-  user.saveAsync()
+  user.save()
     .then((savedUser) => res.json(savedUser))
-    .error((e) => next(e));
+    .catch((e) => next(e));
 }
 
 /**
@@ -59,8 +61,9 @@ function update(req, res, next) {
  */
 function list(req, res, next) {
   const { limit = 50, skip = 0 } = req.query;
-  User.list({ limit, skip }).then((users) =>	res.json(users))
-    .error((e) => next(e));
+  User.list({ limit, skip })
+    .then((users) =>	res.json(users))
+    .catch((e) => next(e));
 }
 
 /**
@@ -69,9 +72,9 @@ function list(req, res, next) {
  */
 function remove(req, res, next) {
   const user = req.user;
-  user.removeAsync()
+  user.remove()
     .then((deletedUser) => res.json(deletedUser))
-    .error((e) => next(e));
+    .catch((e) => next(e));
 }
 
 export default { load, get, create, update, list, remove };

@@ -46,7 +46,8 @@ UserSchema.statics = {
    */
   get(id) {
     return this.findById(id)
-      .execAsync().then((user) => {
+      .exec()
+      .then((user) => {
         if (user) {
           return user;
         }
@@ -66,7 +67,7 @@ UserSchema.statics = {
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limit)
-      .execAsync();
+      .exec();
   }
 };
 
