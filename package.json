@@ -44,15 +44,15 @@
     "express": "4.14.0",
     "express-jwt": "3.4.0",
     "express-validation": "1.0.1",
-    "express-winston": "^1.2.0",
+    "express-winston": "2.0.0",
     "helmet": "2.2.0",
     "http-status": "^0.2.0",
     "joi": "9.0.4",
     "jsonwebtoken": "7.1.9",
     "method-override": "^2.3.5",
-    "mongoose": "^4.3.7",
+    "mongoose": "4.6.1",
     "morgan": "1.7.0",
-    "winston": "^2.1.1"
+    "winston": "2.2.0"
   },
   "devDependencies": {
     "babel-cli": "6.14.0",
