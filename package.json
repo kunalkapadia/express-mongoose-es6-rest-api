@@ -45,7 +45,7 @@
     "express-jwt": "3.4.0",
     "express-validation": "1.0.1",
     "express-winston": "2.0.0",
-    "helmet": "2.2.0",
+    "helmet": "2.3.0",
     "http-status": "^0.2.0",
     "joi": "9.1.0",
     "jsonwebtoken": "7.1.9",
