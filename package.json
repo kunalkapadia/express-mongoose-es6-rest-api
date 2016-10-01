@@ -50,7 +50,7 @@
     "joi": "9.1.0",
     "jsonwebtoken": "7.1.9",
     "method-override": "^2.3.5",
-    "mongoose": "4.6.1",
+    "mongoose": "4.6.2",
     "morgan": "1.7.0",
     "winston": "2.2.0"
   },
