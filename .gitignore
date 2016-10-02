@@ -11,6 +11,15 @@ pids
 # IDE
 .idea
 
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+ehthumbs.db
+Icon?
+Thumbs.db
+
 # Babel ES6 compiles files
 dist
 
