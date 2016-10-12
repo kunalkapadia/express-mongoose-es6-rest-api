@@ -1,7 +1,10 @@
 import Promise from 'bluebird';
 import mongoose from 'mongoose';
+import util from 'util';
 import config from './config/env';
 import app from './config/express';
+
+const debug = require('debug')('express-mongoose-es6-rest-api:index');
 
 // plugin bluebird promise in mongoose
 mongoose.Promise = Promise;
@@ -12,7 +15,12 @@ mongoose.connection.on('error', () => {
   throw new Error(`unable to connect to database: ${config.db}`);
 });
 
-const debug = require('debug')('express-mongoose-es6-rest-api:index');
+// print mongoose logs in dev env
+if (config.MONGOOSE_DEBUG) {
+  mongoose.set('debug', (collectionName, method, query, doc) => {
+    debug(`${collectionName}.${method}`, util.inspect(query, false, 20), doc);
+  });
+}
 
 // listen on port config.port
 app.listen(config.port, () => {
