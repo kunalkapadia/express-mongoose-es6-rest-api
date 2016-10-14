@@ -5,6 +5,8 @@ import del from 'del';
 import runSequence from 'run-sequence';
 import babelCompiler from 'babel-core/register';
 import * as isparta from 'isparta';
+import watch from 'gulp-watch';
+import { spawn } from 'child_process';
 
 const plugins = gulpLoadPlugins();
 
@@ -127,6 +129,38 @@ gulp.task('mocha', ['clean'], () => {
     ['copy', 'babel'],
     'test'
   );
+});
+
+// re-run tests on file changes
+gulp.task('tdd', () => {
+  let node;
+  watch(paths.js, () => {
+    if (node) {
+      node.kill();
+    }
+    node = spawn('gulp', ['test-only'], { stdio: 'inherit' });
+  });
+});
+
+// slim test case useful only for TDD
+gulp.task('test-only', ['set-env', 'copy', 'babel'], () => {
+  let exitCode = 0;
+  gulp.src([paths.tests], { read: false })
+    .pipe(plugins.plumber())
+    .pipe(plugins.mocha({
+      reporter: plugins.util.env['mocha-reporter'] || 'spec',
+      ui: 'bdd',
+      timeout: 6000,
+      compilers: {
+        js: babelCompiler
+      }
+    }))
+    .once('error', () => {
+      exitCode = -1;
+    })
+    .once('end', () => {
+      process.exit(exitCode);
+    });
 });
 
 // gulp serve for development

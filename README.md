@@ -65,6 +65,9 @@ npm test (or gulp mocha)
 
 # use --code-coverage-reporter text to get code coverage for each file
 gulp mocha --code-coverage-reporter text
+
+# auto restart tests after filesystem changes, useful for TDD development
+gulp tdd
 ```
 
 Other gulp tasks:
@@ -143,4 +146,3 @@ Contributions, questions and comments are all welcome and encouraged. For code c
 ## Meta
 
 Kunal Kapadia – [@kunalkapadia12](https://twitter.com/KunalKapadia12) – kunalkapadia12@gmail.com
-
