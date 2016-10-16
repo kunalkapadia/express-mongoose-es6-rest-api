@@ -17,7 +17,6 @@
     "test": "NODE_ENV=test babel-node node_modules/.bin/isparta cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
     "test:watch": "npm run test -- --watch",
     "test:check-coverage": "npm run test && istanbul check-coverage",
-    "commit": "git-cz",
     "report-coverage": "coveralls < ./coverage/lcov.info"
   },
   "repository": {
@@ -90,8 +89,7 @@
   "license": "MIT",
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint && npm test",
-      "commit-msg": "validate-commit-msg"
+      "pre-commit": "npm run lint && npm test"
     },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

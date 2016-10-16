@@ -29,6 +29,7 @@ Heavily inspired from [Egghead.io - How to Write an Open Source JavaScript Libra
 | Debugging via [debug](https://www.npmjs.com/package/debug)           | Instead of inserting and deleting console.log you can replace it with the debug function and just leave it there. You can then selectively debug portions of your code by setting DEBUG env variable. If DEBUG env variable is not set, nothing is displayed to the console.                       |
 | Promisified Code via [bluebird](https://github.com/petkaantonov/bluebird)           | We love promise, don't we ? All our code is promisified and even so our tests via [supertest-as-promised](https://www.npmjs.com/package/supertest-as-promised).                       |
 | API parameter validation via [express-validation](https://www.npmjs.com/package/express-validation)           | Validate body, params, query, headers and cookies of a request (via middleware) and return a response with errors; if any of the configured validation rules fail. You won't anymore need to make your route handler dirty with such validations. |
+| Pre-commit hooks           | Runs lint and tests before any commit is made locally, making sure that only tested and quality code is committed
 | Secure app via [helmet](https://github.com/helmetjs/helmet)           | Helmet helps secure Express apps by setting various HTTP headers. |
 
 - CORS support via [cors](https://github.com/expressjs/cors)
@@ -76,21 +77,11 @@ Other gulp tasks:
 gulp clean
 
 # Lint code with ESLint
-gulp lint
+npm run lint
+npm run lint:watch
 
 # Default task: Wipes out dist and coverage directory. Compiles using babel.
 gulp
-```
-
-##### Commit:
-
-Follows [AngularJS's commit message convention](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines)
-```sh
-# Lint and execute tests before committing code.
-npm run commit
-# OR
-# use git commit directly with correct message convention.
-git commit -m "chore(ghooks): Add pre-commit and commit-msg ghook"
 ```
 
 ##### Deployment
