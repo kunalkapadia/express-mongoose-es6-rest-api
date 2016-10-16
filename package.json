@@ -12,7 +12,7 @@
   "scripts": {
     "start": "gulp serve",
     "build": "gulp",
-    "lint": "esw *.js server/**/*.js config/**/*.js --color",
+    "lint": "esw *.js server config --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "NODE_ENV=test babel-node node_modules/.bin/isparta cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
     "test:watch": "npm run test -- --watch",
