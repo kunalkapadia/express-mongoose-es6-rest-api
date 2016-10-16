@@ -12,7 +12,8 @@
   "scripts": {
     "start": "gulp serve",
     "build": "gulp",
-    "lint": "eslint *.js server/**/*.js config/**/*.js && echo Lint Passed ❤",
+    "lint": "esw *.js server/**/*.js config/**/*.js --color",
+    "lint:watch": "npm run lint -- --watch",
     "test": "gulp mocha",
     "commit": "git-cz",
     "report-coverage": "coveralls < ./coverage/lcov.info"
@@ -68,6 +69,7 @@
     "eslint": "3.8.0",
     "eslint-config-airbnb-base": "7.1.0",
     "eslint-plugin-import": "1.16.0",
+    "eslint-watch": "2.1.14",
     "ghooks": "^1.2.4",
     "gulp": "3.9.1",
     "gulp-babel": "6.1.2",
