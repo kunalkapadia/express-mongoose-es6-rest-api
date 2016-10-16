@@ -61,7 +61,7 @@ function update(req, res, next) {
  */
 function list(req, res, next) {
   const { limit = 50, skip = 0 } = req.query;
-  User.list({ limit, skip })
+  User.list({ limit: parseInt(limit, 10), skip: parseInt(skip, 10) })
     .then(users => res.json(users))
     .catch(e => next(e));
 }
