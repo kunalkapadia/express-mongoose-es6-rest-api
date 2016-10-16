@@ -76,7 +76,8 @@ Other gulp tasks:
 gulp clean
 
 # Lint code with ESLint
-gulp lint
+npm run lint
+npm run lint:watch
 
 # Default task: Wipes out dist and coverage directory. Compiles using babel.
 gulp
