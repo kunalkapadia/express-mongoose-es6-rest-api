@@ -14,7 +14,9 @@
     "build": "gulp",
     "lint": "esw *.js server/**/*.js config/**/*.js --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "gulp mocha",
+    "test": "NODE_ENV=test babel-node node_modules/.bin/isparta cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
+    "test:watch": "npm run test -- --watch",
+    "test:check-coverage": "npm run test && istanbul check-coverage",
     "commit": "git-cz",
     "report-coverage": "coveralls < ./coverage/lcov.info"
   },
