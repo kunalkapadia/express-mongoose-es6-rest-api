@@ -12,15 +12,6 @@ const paths = {
   tests: './server/tests/*.js'
 };
 
-const options = {
-  codeCoverage: {
-    reporters: ['lcov', 'text-summary'],
-    thresholds: {
-      global: { statements: 80, branches: 80, functions: 80, lines: 80 }
-    }
-  }
-};
-
 // Clean up dist and coverage directory
 gulp.task('clean', () =>
   del(['dist/**', 'coverage/**', '!dist', '!coverage'])
