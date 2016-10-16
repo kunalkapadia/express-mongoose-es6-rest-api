@@ -3,8 +3,6 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import path from 'path';
 import del from 'del';
 import runSequence from 'run-sequence';
-import babelCompiler from 'babel-core/register';
-import * as isparta from 'isparta';
 
 const plugins = gulpLoadPlugins();
 
@@ -27,15 +25,6 @@ const options = {
 gulp.task('clean', () =>
   del(['dist/**', 'coverage/**', '!dist', '!coverage'])
 );
-
-// Set env variables
-gulp.task('set-env', () => {
-  plugins.env({
-    vars: {
-      NODE_ENV: 'test'
-    }
-  });
-});
 
 // Copy non-js files to dist
 gulp.task('copy', () =>
@@ -68,66 +57,6 @@ gulp.task('nodemon', ['copy', 'babel'], () =>
     tasks: ['copy', 'babel']
   })
 );
-
-// covers files for code coverage
-gulp.task('pre-test', () =>
-  gulp.src([...paths.js, '!gulpfile.babel.js'])
-    // Covering files
-    .pipe(plugins.istanbul({
-      instrumenter: isparta.Instrumenter,
-      includeUntested: true
-    }))
-    // Force `require` to return covered files
-    .pipe(plugins.istanbul.hookRequire())
-);
-
-// triggers mocha test with code coverage
-gulp.task('test', ['pre-test', 'set-env'], () => {
-  let reporters;
-  let exitCode = 0;
-
-  if (plugins.util.env['code-coverage-reporter']) {
-    reporters = [...options.codeCoverage.reporters, plugins.util.env['code-coverage-reporter']];
-  } else {
-    reporters = options.codeCoverage.reporters;
-  }
-
-  return gulp.src([paths.tests], { read: false })
-    .pipe(plugins.plumber())
-    .pipe(plugins.mocha({
-      reporter: plugins.util.env['mocha-reporter'] || 'spec',
-      ui: 'bdd',
-      timeout: 6000,
-      compilers: {
-        js: babelCompiler
-      }
-    }))
-    .once('error', (err) => {
-      plugins.util.log(err);
-      exitCode = 1;
-    })
-    // Creating the reports after execution of test cases
-    .pipe(plugins.istanbul.writeReports({
-      dir: './coverage',
-      reporters
-    }))
-    // Enforce test coverage
-    .pipe(plugins.istanbul.enforceThresholds({
-      thresholds: options.codeCoverage.thresholds
-    }))
-    .once('end', () => {
-      plugins.util.log('completed !!');
-      process.exit(exitCode);
-    });
-});
-
-// clean dist, compile js files, copy non-js files and execute tests
-gulp.task('mocha', ['clean'], () => {
-  runSequence(
-    ['copy', 'babel'],
-    'test'
-  );
-});
 
 // gulp serve for development
 gulp.task('serve', ['clean'], () => runSequence('nodemon'));

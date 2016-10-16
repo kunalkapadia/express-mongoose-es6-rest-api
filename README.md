@@ -66,7 +66,7 @@ npm test
 # Run tests on file change
 npm run test:watch
 
-# Same as above but enforcing code coverage (configured via .istanbul.yml)
+# Run tests enforcing code coverage (configured via .istanbul.yml)
 npm run test:check-coverage
 ```
 
