@@ -7,7 +7,7 @@
   "private": false,
   "engines": {
     "node": "4.4.x",
-    "npm": "3.9.x"
+    "npm": "2.15.x"
   },
   "scripts": {
     "start": "gulp serve",
