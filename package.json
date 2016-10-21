@@ -7,7 +7,7 @@
   "private": false,
   "engines": {
     "node": "4.4.x",
-    "npm": "3.9.x"
+    "npm": "2.15.x"
   },
   "scripts": {
     "start": "gulp serve",
@@ -49,10 +49,10 @@
     "express-winston": "2.0.0",
     "helmet": "2.3.0",
     "http-status": "^0.2.0",
-    "joi": "9.1.1",
+    "joi": "9.2.0",
     "jsonwebtoken": "7.1.9",
     "method-override": "^2.3.5",
-    "mongoose": "4.6.3",
+    "mongoose": "4.6.4",
     "morgan": "1.7.0",
     "winston": "2.2.0"
   },
@@ -67,7 +67,7 @@
     "coveralls": "^2.11.6",
     "cz-conventional-changelog": "1.2.0",
     "del": "^2.2.0",
-    "eslint": "3.8.0",
+    "eslint": "3.8.1",
     "eslint-config-airbnb-base": "7.1.0",
     "eslint-plugin-import": "1.16.0",
     "eslint-watch": "2.1.14",
