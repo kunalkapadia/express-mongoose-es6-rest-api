@@ -6,8 +6,8 @@
   "main": "index.js",
   "private": false,
   "engines": {
-    "node": "4.4.x",
-    "npm": "2.15.x"
+    "node": ">=4.6.x",
+    "npm": ">=2.15.x"
   },
   "scripts": {
     "start": "gulp serve",
