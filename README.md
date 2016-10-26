@@ -51,15 +51,16 @@ npm install
 
 Start server:
 ```sh
-# set DEBUG env variable to get debug logs
-DEBUG=express-mongoose-es6-rest-api:* npm start
-# OR
-# requires gulp to be installed globally
-npm i -g gulp
-gulp serve
-```
+# Start server
+npm start
 
-Execute tests:
+# Selectively set DEBUG env var to get logs
+DEBUG=express-mongoose-es6-rest-api:* npm start
+```
+Refer [debug](https://www.npmjs.com/package/debug) to know how to selectively turn on logs.
+
+
+Tests:
 ```sh
 # Run tests written in ES6 along with code coverage
 npm test
@@ -71,14 +72,19 @@ npm run test:watch
 npm run test:check-coverage
 ```
 
+Lint:
+```sh
+# Lint code with ESLint
+npm run lint
+
+# Run lint on any file change
+npm run lint:watch
+```
+
 Other gulp tasks:
 ```sh
 # Wipe out dist and coverage directory
 gulp clean
-
-# Lint code with ESLint
-npm run lint
-npm run lint:watch
 
 # Default task: Wipes out dist and coverage directory. Compiles using babel.
 gulp
@@ -88,7 +94,7 @@ gulp
 
 ```sh
 # compile to ES5
-1. npm run build or gulp
+1. npm run build
 
 # upload dist/ to your server
 2. scp -rp dist/ user@dest:/path
