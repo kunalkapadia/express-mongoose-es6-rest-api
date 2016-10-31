@@ -67,7 +67,7 @@
     "coveralls": "^2.11.6",
     "cz-conventional-changelog": "1.2.0",
     "del": "^2.2.0",
-    "eslint": "3.8.1",
+    "eslint": "3.9.0",
     "eslint-config-airbnb-base": "7.1.0",
     "eslint-plugin-import": "1.16.0",
     "eslint-watch": "2.1.14",
