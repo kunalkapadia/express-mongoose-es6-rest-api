@@ -2,8 +2,6 @@ import jwt from 'jsonwebtoken';
 import httpStatus from 'http-status';
 import APIError from '../helpers/APIError';
 
-const config = require('../../config/env');
-
 // sample user, used for authentication
 const user = {
   username: 'react',
@@ -23,7 +21,7 @@ function login(req, res, next) {
   if (req.body.username === user.username && req.body.password === user.password) {
     const token = jwt.sign({
       username: user.username
-    }, config.jwtSecret);
+    }, process.env.jwtSecret);
     return res.json({
       token,
       username: user.username
