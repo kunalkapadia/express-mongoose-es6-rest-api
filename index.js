@@ -1,6 +1,6 @@
-import env from './config/env';
 import mongoose from 'mongoose';
 import util from 'util';
+import env from './config/env'; // eslint-disable-line no-unused-vars
 import app from './config/express';
 
 const debug = require('debug')('express-mongoose-es6-rest-api:index');
