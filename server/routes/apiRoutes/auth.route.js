@@ -1,11 +1,20 @@
 import express from 'express';
 import validate from 'express-validation';
 import expressJwt from 'express-jwt';
-import paramValidation from '../../config/param-validation';
-import authCtrl from '../controllers/auth.controller';
-import config from '../../config/env';
+import Joi from 'joi';
+import authCtrl from '../../controllers/auth.controller';
+import config from '../../../config/env';
 
 const router = express.Router(); // eslint-disable-line new-cap
+const paramValidation = {
+  // POST /api/auth/login
+  login: {
+    body: {
+      username: Joi.string().required(),
+      password: Joi.string().required()
+    }
+  }
+};
 
 /** POST /api/auth/login - Returns token if correct username and password is provided */
 router.route('/login')

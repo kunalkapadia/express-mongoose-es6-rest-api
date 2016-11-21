@@ -1,9 +1,28 @@
 import express from 'express';
 import validate from 'express-validation';
-import paramValidation from '../../config/param-validation';
-import userCtrl from '../controllers/user.controller';
+import Joi from 'joi';
+import userCtrl from '../../controllers/user.controller';
 
 const router = express.Router(); // eslint-disable-line new-cap
+const paramValidation = {
+  // POST /api/users
+  createUser: {
+    body: {
+      username: Joi.string().required(),
+      mobileNumber: Joi.string().regex(/^[1-9][0-9]{9}$/).required()
+    }
+  },
+  // UPDATE /api/users/:userId
+  updateUser: {
+    body: {
+      username: Joi.string().required(),
+      mobileNumber: Joi.string().regex(/^[1-9][0-9]{9}$/).required()
+    },
+    params: {
+      userId: Joi.string().hex().required()
+    }
+  },
+};
 
 router.route('/')
   /** GET /api/users - Get list of users */
