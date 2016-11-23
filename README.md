@@ -31,6 +31,7 @@ Heavily inspired from [Egghead.io - How to Write an Open Source JavaScript Libra
 | API parameter validation via [express-validation](https://www.npmjs.com/package/express-validation)           | Validate body, params, query, headers and cookies of a request (via middleware) and return a response with errors; if any of the configured validation rules fail. You won't anymore need to make your route handler dirty with such validations. |
 | Pre-commit hooks           | Runs lint and tests before any commit is made locally, making sure that only tested and quality code is committed
 | Secure app via [helmet](https://github.com/helmetjs/helmet)           | Helmet helps secure Express apps by setting various HTTP headers. |
+| Uses [yarn](https://yarnpkg.com) over npm            | Uses new released yarn package manager by facebook. You can read more about it [here](https://code.facebook.com/posts/1840075619545360) |
 
 - CORS support via [cors](https://github.com/expressjs/cors)
 - Uses [http-status](https://www.npmjs.com/package/http-status) to set http status code. It is recommended to use `httpStatus.INTERNAL_SERVER_ERROR` instead of directly using `500` when setting status code.
