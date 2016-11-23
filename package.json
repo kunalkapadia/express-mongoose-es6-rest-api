@@ -6,17 +6,18 @@
   "main": "index.js",
   "private": false,
   "engines": {
-    "node": ">=4.6.x",
-    "npm": ">=2.15.x"
+    "node": ">=4.6.0",
+    "npm": ">=2.15.9",
+    "yarn": ">=0.17.9"
   },
   "scripts": {
     "start": "gulp serve",
     "build": "gulp",
     "lint": "esw *.js server config --color",
-    "lint:watch": "npm run lint -- --watch",
+    "lint:watch": "yarn lint -- --watch",
     "test": "NODE_ENV=test babel-node node_modules/.bin/isparta cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
-    "test:watch": "npm run test -- --watch",
-    "test:check-coverage": "npm run test && istanbul check-coverage",
+    "test:watch": "yarn test -- --watch",
+    "test:check-coverage": "yarn test && istanbul check-coverage",
     "report-coverage": "coveralls < ./coverage/lcov.info"
   },
   "repository": {
@@ -89,7 +90,7 @@
   "license": "MIT",
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint && npm test"
+      "pre-commit": "yarn lint && yarn test"
     },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

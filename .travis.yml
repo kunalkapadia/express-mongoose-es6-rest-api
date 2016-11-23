@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "4.6"
   - "6.9"
-  - "7.0"
+  - "7.2"
 services:
   - mongodb
 cache:
@@ -10,7 +10,5 @@ cache:
   - node_modules
 git:
   depth: 3
-before_script:
-  - npm prune
 after_script:
-  - npm run report-coverage
+  - yarn report-coverage
