@@ -55,6 +55,11 @@ Install dependencies:
 yarn
 ```
 
+Copy environment file (for production replace .env.development with .env.production and similarly for test):
+```sh
+cp .env.example .env.development
+```
+
 Start server:
 ```sh
 # Start server
