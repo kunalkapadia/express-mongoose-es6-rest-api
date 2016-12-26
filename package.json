@@ -79,7 +79,7 @@
     "gulp-newer": "^1.1.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-util": "^3.0.7",
+    "gulp-util": "^3.0.8",
     "isparta": "4.0.0",
     "mocha": "3.2.0",
     "run-sequence": "^1.1.5",
