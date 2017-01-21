@@ -16,7 +16,7 @@ describe('## AUTH APIs', () => {
   };
   let jwtToken;
 
-  describe('# GET /api/auth/login', () => {
+  describe('# POST /api/auth/login', () => {
     it('should get (valid) JWT token', (done) => {
       request(app)
         .post('/api/auth/login')
