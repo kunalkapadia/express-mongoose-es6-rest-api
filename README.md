@@ -68,8 +68,11 @@ Refer [debug](https://www.npmjs.com/package/debug) to know how to selectively tu
 
 Tests:
 ```sh
-# Run tests written in ES6 along with code coverage
+# Run tests written in ES6 
 yarn test
+
+# Run test along with code coverage
+yarn test:coverage
 
 # Run tests on file change
 yarn test:watch
