@@ -8,14 +8,14 @@
   "engines": {
     "node": ">=4.6.0",
     "npm": ">=2.15.9",
-    "yarn": ">=0.17.9"
+    "yarn": ">=0.20.0"
   },
   "scripts": {
     "start": "gulp serve",
     "build": "gulp",
     "lint": "esw *.js server config --color",
     "lint:watch": "yarn lint -- --watch",
-    "test": "cross-env NODE_ENV=test babel-node node_modules/isparta/bin/isparta cover node_modules/mocha/bin/_mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
+    "test": "cross-env NODE_ENV=test babel-node node_modules/.bin/isparta cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
     "test:watch": "yarn test -- --watch",
     "test:check-coverage": "yarn test && istanbul check-coverage",
     "report-coverage": "coveralls < ./coverage/lcov.info"
@@ -82,6 +82,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "isparta": "4.0.0",
+    "istanbul": "0.4.5",
     "mocha": "3.2.0",
     "run-sequence": "^1.1.5",
     "supertest": "2.0.1",
