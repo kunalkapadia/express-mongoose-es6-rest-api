@@ -1,6 +1,6 @@
 verbose: false
 instrumentation:
-  excludes: ['dist/**', 'coverage/**', 'gulpfile.babel.js']
+  excludes: ['dist/**', 'coverage/**', 'gulpfile.babel.js', 'config/env/development.js', 'config/env/production.js']
   include-all-sources: true
 reporting:
     print: summary
@@ -21,5 +21,5 @@ check:
     each:
         statements: 50
         lines: 50
-        branches: 50
+        branches: 30
         functions: 20
