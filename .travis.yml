@@ -10,5 +10,7 @@ cache:
   - node_modules
 git:
   depth: 3
+script:
+  - yarn test:check-coverage
 after_script:
   - yarn report-coverage
