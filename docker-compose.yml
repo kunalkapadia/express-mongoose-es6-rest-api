@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  express-mongoose-es6-rest-api:
+    build:
+      context: .
+    volumes:
+      - .:/app
+      - /app/node_modules/
+    ports:
+      - "4040:4040"
+    environment:
+      - MONGO_HOST=mongo
+    links:
+      - mongo
+  mongo:
+    image: "mongo:3.4.2"
+    ports:
+      - "27017:27017"
