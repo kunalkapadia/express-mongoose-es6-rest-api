@@ -3,9 +3,7 @@ import httpStatus from 'http-status';
 import jwt from 'jsonwebtoken';
 import chai, { expect } from 'chai';
 import app from '../../index';
-
-const config = require('../../config/env');
-const should = require('chai').should();
+import config from '../../config/env';
 
 chai.config.includeStack = true;
 
@@ -23,9 +21,9 @@ describe('## AUTH APIs', () => {
         .send(user)
         .expect(httpStatus.OK)
         .then((res) => {
-          should.exist(res.body.token);
+          expect(res.body).to.have.property('token');
           jwt.verify(res.body.token, config.jwtSecret, (err, decoded) => {
-            should.not.exist(err);
+            expect(err).to.not.be.ok; // eslint-disable-line no-unused-expressions
             expect(decoded.username).to.equal(user.username);
             jwtToken = `Bearer ${res.body.token}`;
             done();
