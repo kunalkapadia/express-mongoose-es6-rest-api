@@ -51,7 +51,7 @@
     "express-winston": "2.1.2",
     "helmet": "3.1.0",
     "http-status": "^0.2.0",
-    "joi": "10.0.6",
+    "joi": "10.2.2",
     "jsonwebtoken": "7.1.9",
     "method-override": "^2.3.5",
     "mongoose": "4.7.4",
