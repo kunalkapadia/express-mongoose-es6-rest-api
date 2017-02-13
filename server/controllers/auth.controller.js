@@ -1,8 +1,7 @@
 import jwt from 'jsonwebtoken';
 import httpStatus from 'http-status';
 import APIError from '../helpers/APIError';
-
-const config = require('../../config/env');
+import config from '../../config/env';
 
 // sample user, used for authentication
 const user = {
@@ -30,7 +29,7 @@ function login(req, res, next) {
     });
   }
 
-  const err = new APIError('Authentication error', httpStatus.UNAUTHORIZED);
+  const err = new APIError('Authentication error', httpStatus.UNAUTHORIZED, true);
   return next(err);
 }
 
