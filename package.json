@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start": "gulp serve",
+    "start:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
     "build": "gulp",
     "lint": "esw *.js server config --color",
     "lint:watch": "yarn lint -- --watch",
