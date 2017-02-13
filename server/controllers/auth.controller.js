@@ -29,7 +29,7 @@ function login(req, res, next) {
     });
   }
 
-  const err = new APIError('Authentication error', httpStatus.UNAUTHORIZED);
+  const err = new APIError('Authentication error', httpStatus.UNAUTHORIZED, true);
   return next(err);
 }
 
