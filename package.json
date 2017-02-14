@@ -16,6 +16,7 @@
     "build": "gulp",
     "lint": "esw *.js server config --color",
     "lint:watch": "yarn lint -- --watch",
+    "precommit": "yarn lint && yarn test",
     "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
     "test:watch": "yarn test -- --watch",
     "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register ./server/**/*.test.js",
@@ -75,7 +76,6 @@
     "eslint-config-airbnb-base": "7.1.0",
     "eslint-plugin-import": "1.16.0",
     "eslint-watch": "2.1.14",
-    "ghooks": "^1.2.4",
     "gulp": "3.9.1",
     "gulp-babel": "6.1.2",
     "gulp-load-plugins": "^1.2.0",
@@ -83,6 +83,7 @@
     "gulp-nodemon": "^2.0.6",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
+    "husky": "^0.13.1",
     "istanbul": "1.1.0-alpha.1",
     "mocha": "3.2.0",
     "run-sequence": "^1.1.5",
@@ -92,9 +93,6 @@
   },
   "license": "MIT",
   "config": {
-    "ghooks": {
-      "pre-commit": "yarn lint && yarn test"
-    },
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
