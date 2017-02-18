@@ -155,6 +155,7 @@ This project is licensed under the [MIT License](https://github.com/KunalKapadia
 
 ## Support Development
 If this project saved your valuable time in getting your service up, and you feel like buying me coffee, you can donate either at my BTC address: `1LkW5UoERR1jjJsChMheKuo6vn95x2mzWg` or at [![Support via Paypal](https://img.shields.io/badge/support-paypal-yellowgreen.svg?style=flat-square)](https://www.paypal.me/KunalKapadia)
+
 Your support is greatly appreciated.
 
 ## Meta
