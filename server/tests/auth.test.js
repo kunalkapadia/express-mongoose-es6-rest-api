@@ -63,6 +63,18 @@ describe('## Auth APIs', () => {
         .catch(done);
     });
 
+    it('should fail to get random number because of wrong token', (done) => {
+      request(app)
+        .get('/api/auth/random-number')
+        .set('Authorization', 'Bearer inValidToken')
+        .expect(httpStatus.UNAUTHORIZED)
+        .then((res) => {
+          expect(res.body.message).to.equal('Unauthorized');
+          done();
+        })
+        .catch(done);
+    });
+
     it('should get a random number', (done) => {
       request(app)
         .get('/api/auth/random-number')
