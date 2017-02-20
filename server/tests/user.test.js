@@ -91,6 +91,18 @@ describe('## User APIs', () => {
         })
         .catch(done);
     });
+
+    it('should get all users (with limit and skip)', (done) => {
+      request(app)
+        .get('/api/users')
+        .query({ limit: 10, skip: 1 })
+        .expect(httpStatus.OK)
+        .then((res) => {
+          expect(res.body).to.be.an('array');
+          done();
+        })
+        .catch(done);
+    });
   });
 
   describe('# DELETE /api/users/', () => {
