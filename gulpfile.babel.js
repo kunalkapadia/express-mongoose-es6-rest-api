@@ -8,13 +8,13 @@ const plugins = gulpLoadPlugins();
 
 const paths = {
   js: ['./**/*.js', '!dist/**', '!node_modules/**', '!coverage/**'],
-  nonJs: ['./package.json', './.gitignore'],
+  nonJs: ['./package.json', './.gitignore', './.env'],
   tests: './server/tests/*.js'
 };
 
 // Clean up dist and coverage directory
 gulp.task('clean', () =>
-  del.sync(['dist/**', 'coverage/**', '!dist', '!coverage'])
+  del.sync(['dist/**', 'dist/.*', 'coverage/**', '!dist', '!coverage'])
 );
 
 // Copy non-js files to dist

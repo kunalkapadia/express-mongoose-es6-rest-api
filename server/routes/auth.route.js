@@ -3,7 +3,7 @@ import validate from 'express-validation';
 import expressJwt from 'express-jwt';
 import paramValidation from '../../config/param-validation';
 import authCtrl from '../controllers/auth.controller';
-import config from '../../config/env';
+import config from '../../config/config';
 
 const router = express.Router(); // eslint-disable-line new-cap
 

@@ -3,7 +3,7 @@ import httpStatus from 'http-status';
 import jwt from 'jsonwebtoken';
 import chai, { expect } from 'chai';
 import app from '../../index';
-import config from '../../config/env';
+import config from '../../config/config';
 
 chai.config.includeStack = true;
 
