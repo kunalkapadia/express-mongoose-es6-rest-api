@@ -56,6 +56,11 @@ Install dependencies:
 yarn
 ```
 
+Set environment (vars):
+```sh
+cp .env.example .env
+```
+
 Start server:
 ```sh
 # Start server
