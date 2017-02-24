@@ -5,12 +5,29 @@ services:
     build:
       context: .
     volumes:
+      # Mounts the project directory on the host to /code inside the container,
+      # allowing you to modify the code without having to rebuild the image.
       - .:/app
+      # Just specify a path and let the Engine create a volume.
+      # Data present in the base image at the specified mount point will be copied
+      # over to the new volume upon volume initialization
       - /app/node_modules/
+
+    # Expose ports [HOST:CONTAINER}
     ports:
       - "4040:4040"
+
+    # Set environment variables from this file
+    env_file:
+      - .env
+
+    # Overwrite any env var defined in above file (if required)
     environment:
-      - MONGO_HOST=mongo
+      - MONGO_HOST=mongodb://mongo/express-mongoose-es6-rest-api-development
+
+    # Link to containers in another service.
+    # Links also express dependency between services in the same way as depends_on,
+    # so they determine the order of service startup.
     links:
       - mongo
   mongo:
