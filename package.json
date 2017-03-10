@@ -50,7 +50,7 @@
     "dotenv": "^4.0.0",
     "express": "4.14.0",
     "express-jwt": "5.1.0",
-    "express-validation": "1.0.1",
+    "express-validation": "1.0.2",
     "express-winston": "2.1.2",
     "helmet": "3.1.0",
     "http-status": "^0.2.0",
