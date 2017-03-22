@@ -66,6 +66,8 @@
     "mongodb": "2.2.19",
     "mongoose": "4.7.4",
     "morgan": "1.7.0",
+    "qs": "6.4.0",
+    "readable-stream": "^2.2.6",
     "winston": "2.3.0"
   },
   "devDependencies": {
