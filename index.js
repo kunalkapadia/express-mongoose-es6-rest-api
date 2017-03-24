@@ -20,9 +20,9 @@ const mongoUri = `${config.mongo.host}:${config.mongo.port}`;
 if (process.env.NODE_ENV === 'test') {
   const mockgoose = new Mockgoose(mongoose);
 
-  mockgoose.prepareStorage().then(function () {
+  mockgoose.prepareStorage().then(() => {
     mongoose.connect('mongodb://example.com/test-db');
-  })
+  });
 } else {
   mongoose.connect(mongoUri, { server: { socketOptions: { keepAlive: 1 } } });
 }
