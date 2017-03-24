@@ -55,10 +55,12 @@
     "helmet": "3.1.0",
     "http-status": "^0.2.0",
     "joi": "10.0.6",
+    "js-yaml": "^3.8.2",
     "jsonwebtoken": "7.1.9",
     "method-override": "^2.3.5",
     "mongoose": "4.7.4",
     "morgan": "1.7.0",
+    "swagger-ui-express": "^1.0.5",
     "winston": "2.3.0"
   },
   "devDependencies": {

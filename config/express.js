@@ -8,13 +8,19 @@ import cors from 'cors';
 import httpStatus from 'http-status';
 import expressWinston from 'express-winston';
 import expressValidation from 'express-validation';
+import fs from 'fs';
 import helmet from 'helmet';
+import jsyaml from 'js-yaml';
+import swaggerUi from 'swagger-ui-express';
 import winstonInstance from './winston';
 import routes from '../server/routes/index.route';
 import config from './config';
 import APIError from '../server/helpers/APIError';
 
 const app = express();
+// The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
+const spec = fs.readFileSync('server/docs/api_docs.yml', 'utf8');
+const swaggerDoc = jsyaml.safeLoad(spec);
 
 if (config.env === 'development') {
   app.use(logger('dev'));
@@ -45,6 +51,8 @@ if (config.env === 'development') {
     colorStatus: true // Color the status code (default green, 3XX cyan, 4XX yellow, 5XX red).
   }));
 }
+// mount api docs route
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc, false));
 
 // mount all routes on /api path
 app.use('/api', routes);
