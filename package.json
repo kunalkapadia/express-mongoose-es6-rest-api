@@ -74,7 +74,7 @@
     "cz-conventional-changelog": "1.2.0",
     "del": "^2.2.0",
     "eslint": "3.16.1",
-    "eslint-config-airbnb-base": "7.1.0",
+    "eslint-config-airbnb-base": "11.1.2",
     "eslint-plugin-import": "1.16.0",
     "eslint-watch": "2.1.14",
     "gulp": "3.9.1",
