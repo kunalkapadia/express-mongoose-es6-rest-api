@@ -17,7 +17,7 @@ mongoose.Promise = Promise;
 const mongoUri = config.mongo.host;
 mongoose.connect(mongoUri, { server: { socketOptions: { keepAlive: 1 } } });
 mongoose.connection.on('error', () => {
-  throw new Error(`unable to connect to database: ${config.db}`);
+  throw new Error(`unable to connect to database: ${mongoUri}`);
 });
 
 // print mongoose logs in dev env
@@ -32,7 +32,7 @@ if (config.MONGOOSE_DEBUG) {
 if (!module.parent) {
   // listen on port config.port
   app.listen(config.port, () => {
-    debug(`server started on port ${config.port} (${config.env})`);
+    console.info(`server started on port ${config.port} (${config.env})`); // eslint-disable-line no-console
   });
 }
 

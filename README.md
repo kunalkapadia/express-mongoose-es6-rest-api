@@ -143,6 +143,14 @@ Get code coverage summary on executing `yarn test`
 `yarn test` also generates HTML code coverage report in `coverage/` directory. Open `lcov-report/index.html` to view it.
 ![Code coverage HTML report](https://cloud.githubusercontent.com/assets/4172932/12625331/571a48fe-c559-11e5-8aa0-f9aacfb8c1cb.jpg)
 
+## Docker
+
+```sh
+# For Development
+# service restarts on file change
+1. bash bin/development.sh
+```
+
 ## A Boilerplate-only Option
 
 If you would prefer not to use any of our tooling, delete the following files from the project: `package.json`, `gulpfile.babel.js`, `.eslintrc` and `.travis.yml`. You can now safely use the boilerplate with an alternative build-system or no build-system at all if you choose.
