@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { Mockgoose } from 'mockgoose';
 import util from 'util';
 
 // config should be imported before importing any other file
@@ -15,7 +16,17 @@ mongoose.Promise = Promise;
 
 // connect to mongo db
 const mongoUri = `${config.mongo.host}:${config.mongo.port}`;
-mongoose.connect(mongoUri, { server: { socketOptions: { keepAlive: 1 } } });
+
+if (process.env.NODE_ENV === 'test') {
+  const mockgoose = new Mockgoose(mongoose);
+
+  mockgoose.prepareStorage().then(() => {
+    mongoose.connect('mongodb://example.com/test-db');
+  });
+} else {
+  mongoose.connect(mongoUri, { server: { socketOptions: { keepAlive: 1 } } });
+}
+
 mongoose.connection.on('error', () => {
   throw new Error(`unable to connect to database: ${config.db}`);
 });
