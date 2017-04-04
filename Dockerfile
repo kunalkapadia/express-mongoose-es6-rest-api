@@ -1,5 +1,5 @@
 # take default image of node boron i.e  node 6.x
-FROM node:boron
+FROM node:6.10.1
 
 MAINTAINER Kunal Kapadia <kunalkapadia12@gmail.com>
 
@@ -8,10 +8,6 @@ RUN mkdir -p /app
 
 # set /app directory as default working directory
 WORKDIR /app
-
-# Install yarn
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
-ENV PATH "$PATH:/root/.yarn/bin"
 
 # only copy package.json initially so that `RUN yarn` layer is recreated only
 # if there are changes in package.json
