@@ -45,7 +45,7 @@
     "body-parser": "1.15.2",
     "compression": "1.6.2",
     "cookie-parser": "1.4.3",
-    "cors": "2.8.1",
+    "cors": "2.8.3",
     "debug": "^2.4.5",
     "dotenv": "^4.0.0",
     "express": "4.14.0",
