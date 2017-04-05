@@ -42,7 +42,7 @@
   ],
   "dependencies": {
     "bluebird": "3.4.6",
-    "body-parser": "1.15.2",
+    "body-parser": "1.17.0",
     "compression": "1.6.2",
     "cookie-parser": "1.4.3",
     "cors": "2.8.1",
