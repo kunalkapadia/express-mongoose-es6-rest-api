@@ -90,7 +90,7 @@
     "run-sequence": "^1.1.5",
     "supertest": "2.0.1",
     "supertest-as-promised": "4.0.2",
-    "validate-commit-msg": "^2.6.1"
+    "validate-commit-msg": "^2.11.0"
   },
   "license": "MIT",
   "config": {
