@@ -75,7 +75,7 @@
     "del": "^2.2.0",
     "eslint": "3.16.1",
     "eslint-config-airbnb-base": "7.1.0",
-    "eslint-plugin-import": "1.16.0",
+    "eslint-plugin-import": "2.1.0",
     "eslint-watch": "2.1.14",
     "gulp": "3.9.1",
     "gulp-babel": "6.1.2",
