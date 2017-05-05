@@ -1,5 +1,7 @@
 # Express & mongoose REST API Boilerplate in ES6 with Code Coverage [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/KunalKapadia/express-mongoose-es6-rest-api.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://img.shields.io/travis/KunalKapadia/express-mongoose-es6-rest-api/master.svg?style=flat-square)](https://travis-ci.org/KunalKapadia/express-mongoose-es6-rest-api)
 [![Coverage Status](https://img.shields.io/coveralls/KunalKapadia/express-mongoose-es6-rest-api/master.svg?style=flat-square)](https://coveralls.io/github/KunalKapadia/express-mongoose-es6-rest-api?branch=master)
 [![Code Climate](https://img.shields.io/codeclimate/github/KunalKapadia/express-mongoose-es6-rest-api.svg?style=flat-square)](https://codeclimate.com/github/KunalKapadia/express-mongoose-es6-rest-api)
