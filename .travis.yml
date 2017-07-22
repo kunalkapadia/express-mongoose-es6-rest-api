@@ -15,8 +15,7 @@ after_script:
 before_script:
 - npm install -g gulp-cli
 deploy:
-  app: codalyze-test-ci
+  app: test-ci
   provider: heroku
   api_key:
     secure: auBdU0dKRsULQaMsTFnt0Gal/YSJSQFgSz1bONqYkm+TFnSlC2W3w1BNUFAqyrUceWT90aieBRau4G9yFNUE6/MGFaxH7a2B1CYraXE2sHXQQ5+vts2mIyeMNnAWiQTiqpMjBvIVKkfLzgOdYgTgNwIZ4b6bSRqd9upCAZAbhoipFNpChSdPtKS6iAr3V7PXlHl1GOyPqURVmhi5r3snHAWk70tp5RZMEX/jSvXnQDFK+YlNyKS4LwpyS1B9UB1C+wLx5MCuijFi6l02ETD21LN3JQG800MKukG3/6Zhec2JbCzlRMMphHJk0fX2bshIpLAEuZzEd0dvOYVTJ5maMuCUijq07PTTIuTOLKCcoZFuKm+sypF9jv4lEVfQUp+dEchrfQyixJNgbuEP6qbbo00i4xzMxPMrj/l0cPI0LSSgupLS4CrrmwiVvqTx30Cr0MXY+sU2uGMNOABHVce6S7QoNv0jst9RlDd2Ab+Q+akD7/ZABGFpOE8AIADP4y9gZcoj92nn8uOpRnISgYGjdBYM9iqksTxiWqwgGWKKWXhr5Gjvc1Ql6y4LBHvtKNDHliMwGs7N9f5PLpWitY50q7NMzwuMH8mO95+WXQ1MFxFORp04p+rscTx7jr8Q+uF/SWZ20BmmmAYIyqMIvREEHKMK/s5xlT7QvrQV/ZENMKU=
-    
