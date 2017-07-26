@@ -25,6 +25,7 @@ git branch --track develop origin/develop
 echo "will not come here"
 git branch
 git checkout develop
+git pull
 
 #git fetch upstream
 #git reset upstream/gh-pages
