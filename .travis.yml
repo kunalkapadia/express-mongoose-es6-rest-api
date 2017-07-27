@@ -11,7 +11,7 @@ git:
 script: cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec
   --colors --compilers js:babel-core/register server/tests --recursive
 after_script:
-- yarn report-coverage
+- npm report-coverage
 before_script:
 - npm install -g gulp-cli
 deploy:
