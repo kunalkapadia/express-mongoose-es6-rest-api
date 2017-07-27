@@ -6,6 +6,7 @@ git remote add upstream "https://github.com/surabhi226005/express-mongoose-es6-r
 echo "Remote branch added"
 git fetch
 echo "Remote fetched"
+git branch --track develop origin/develop
 git branch
 git checkout develop
 git pull
