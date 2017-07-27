@@ -8,7 +8,7 @@ cache:
   - node_modules
 git:
   depth: 3
-script: cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec
+script: npm run build && cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec
   --colors --compilers js:babel-core/register server/tests --recursive
 after_script:
 - npm report-coverage
