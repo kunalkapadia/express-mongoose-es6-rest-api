@@ -1,14 +1,14 @@
 {
   "name": "express-mongoose-es6-rest-api",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
   "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
   "main": "index.js",
   "private": false,
   "engines": {
-    "node": ">=4.8.0",
-    "npm": ">=2.15.11",
-    "yarn": ">=0.20.3"
+    "node": ">=8.2.1",
+    "npm": ">=5.3.0",
+    "yarn": ">=0.27.5"
   },
   "scripts": {
     "start": "gulp serve",
