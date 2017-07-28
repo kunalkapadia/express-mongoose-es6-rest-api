@@ -29,6 +29,7 @@ git add dist/ ;
 git checkout -b $NEW_TRAVIS_BRANCH ;
 git commit -m "$TRAVIS_COMMIT_MESSAGE" ;
 # Push to Heroku!
+git fetch --all --unshallow
 yes | git push --force $PROVIDER $NEW_TRAVIS_BRANCH:$PROVIDER_BRANCH ;
 
 
