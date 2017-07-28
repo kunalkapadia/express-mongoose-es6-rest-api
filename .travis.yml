@@ -8,12 +8,16 @@ cache:
   - node_modules
 git:
   depth: 3
+install: 
+  - git clone $GIT_CLONE_REMOTE
+  - cd $REPO_NAME
+  - git checkout $TRAVIS_BRANCH
+  - npm i
 script: npm run travis-script
 after_script:
   - npm report-coverage
 before_script:
   - npm install -g gulp-cli
-  - git fetch --all --unshallow
 deploy:
   app: $APP_NAME
   provider: $PROVIDER

@@ -6,7 +6,7 @@ git config --global user.email $GIT_USER_EMAIL
 gem install $PROVIDER
 
 # Add your Heroku git repo:
-git remote rm $PROVIDER ; 
+git remote rm $PROVIDER ;
 
 git remote add $PROVIDER git@$PROVIDER.com:$PROVIDER_APP_NAME.git ;
 
