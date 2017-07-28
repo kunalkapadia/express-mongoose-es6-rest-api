@@ -13,6 +13,7 @@ after_script:
   - npm report-coverage
 before_script:
   - npm install -g gulp-cli
+  - git fetch --all --unshallow
 deploy:
   app: $APP_NAME
   provider: $PROVIDER
