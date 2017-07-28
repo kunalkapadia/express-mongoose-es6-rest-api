@@ -19,5 +19,4 @@ deploy:
   api_key:
     secure: $TRAVIS_SECURE_API_KEY
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "develop" ] ; then 
-    if [ "$TRAVIS_PULL_REQUEST" == "true" ] ; then bash travis.sh ; fi ; fi
+  - if [ "$TRAVIS_BRANCH" == "develop" ] ; then bash travis.sh ; fi
