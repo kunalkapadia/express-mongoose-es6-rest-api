@@ -10,7 +10,7 @@ import expressWinston from 'express-winston';
 import expressValidation from 'express-validation';
 import helmet from 'helmet';
 import winstonInstance from './winston';
-import routes from '../server/routes/index.route';
+import routes from '../index.route';
 import config from './config';
 import APIError from '../server/helpers/APIError';
 
