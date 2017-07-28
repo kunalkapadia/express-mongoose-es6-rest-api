@@ -12,8 +12,8 @@ git remote rm $PROVIDER ;
 git remote add $PROVIDER git@$PROVIDER.com:$PROVIDER_APP_NAME.git ;
 
 git add dist/ ;
-git checkout -b $TRAVIS_BRANCH ;
+git checkout -b $NEW_TRAVIS_BRANCH ;
 git commit -m "$TRAVIS_COMMIT_MESSAGE" ;
-git push $PROVIDER $TRAVIS_BRANCH:PROVIDER_BRANCH ;
+git push $PROVIDER $NEW_TRAVIS_BRANCH:$PROVIDER_BRANCH ;
 
 echo -e "yes" | ./travis.sh ; fi
