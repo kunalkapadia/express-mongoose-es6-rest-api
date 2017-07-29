@@ -148,10 +148,12 @@ Get code coverage summary on executing `yarn test`
 ## Docker
 
 ```sh
-# For Development
+# Using Docker Compose for Development
 # service restarts on file change
 1. bash bin/development.sh
 ```
+
+
 
 ## A Boilerplate-only Option
 
