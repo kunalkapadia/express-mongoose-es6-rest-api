@@ -1,18 +1,18 @@
-import express from 'express';
-import logger from 'morgan';
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import compress from 'compression';
-import methodOverride from 'method-override';
-import cors from 'cors';
-import httpStatus from 'http-status';
-import expressWinston from 'express-winston';
-import expressValidation from 'express-validation';
-import helmet from 'helmet';
-import winstonInstance from './winston';
-import routes from '../index.route';
-import config from './config';
-import APIError from '../server/helpers/APIError';
+const express = require('express');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const compress = require('compression');
+const methodOverride = require('method-override');
+const cors = require('cors');
+const httpStatus = require('http-status');
+const expressWinston = require('express-winston');
+const expressValidation = require('express-validation');
+const helmet = require('helmet');
+const winstonInstance = require('./winston');
+const routes = require('../index.route');
+const config = require('./config');
+const APIError = require('../server/helpers/APIError');
 
 const app = express();
 
@@ -84,4 +84,4 @@ app.use((err, req, res, next) => // eslint-disable-line no-unused-vars
   })
 );
 
-export default app;
+module.exports = app;
