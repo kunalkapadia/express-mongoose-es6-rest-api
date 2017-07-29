@@ -147,12 +147,22 @@ Get code coverage summary on executing `yarn test`
 
 ## Docker
 
+#### Using Docker Compose for Development
 ```sh
-# Using Docker Compose for Development
 # service restarts on file change
-1. bash bin/development.sh
+bash bin/development.sh
 ```
 
+#### Building and running without Docker Compose
+```bash
+# To use this option you need to make sure mongodb is listening on port 27017
+
+# Build docker 
+docker build -t express-mongoose-es6-rest-api .
+
+# Run docker
+docker run -p 4040:4040 express-mongoose-es6-rest-api
+```
 
 
 ## A Boilerplate-only Option
