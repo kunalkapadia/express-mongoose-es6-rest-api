@@ -1,9 +1,10 @@
-import request from 'supertest-as-promised';
-import httpStatus from 'http-status';
-import jwt from 'jsonwebtoken';
-import chai, { expect } from 'chai';
-import app from '../../index';
-import config from '../../config/config';
+const request = require('supertest-as-promised');
+const httpStatus = require('http-status');
+const jwt = require('jsonwebtoken');
+const chai = require('chai'); // eslint-disable-line import/newline-after-import
+const expect = chai.expect;
+const app = require('../../index');
+const config = require('../../config/config');
 
 chai.config.includeStack = true;
 

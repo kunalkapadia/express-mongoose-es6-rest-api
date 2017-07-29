@@ -1,6 +1,6 @@
-import express from 'express';
-import userRoutes from './server/user/user.route';
-import authRoutes from './server/auth/auth.route';
+const express = require('express');
+const userRoutes = require('./server/user/user.route');
+const authRoutes = require('./server/auth/auth.route');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -17,4 +17,4 @@ router.use('/users', userRoutes);
 // mount auth routes at /auth
 router.use('/auth', authRoutes);
 
-export default router;
+module.exports = router;
