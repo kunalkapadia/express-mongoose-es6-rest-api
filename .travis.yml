@@ -22,6 +22,7 @@ deploy:
   app: $PROVIDER_APP_NAME
   provider: $PROVIDER
   on:
+    repo: $PROVIDER_REPO_NAME
     all_branches: true
   api_key:
     secure: hroxpe+BVivI+JtDYGdwJoVFfGEk5hSAk1gd3Bcrg4zTUnU+66WGOblBbganYVg25mMjGEmyaCtzCSVG9b/xc1nkeK977MUNnp50oA5gYNvxb8UXgaBk1iq/BTH7CzaFreEpbkL7Vywdsibxj7XiidiQkSsHrC8dq4TgVwQ7wY3SI8+SHEJ3CKKzYvW3XSVVXXp8OJLlkIWeGawpBNItRd0vkJeqMSGf4Z9FgapKEvp69wPOqoh79L0Dj36DjUgOmCrzSfXsMn+Ihe/NyrGbAFvry9otPyxxewr3puP7zc+tyVqA565kMxH1A+CvydiOhnVVABt/tYRmdb3/Lpd5mNsGDDi5taRHTUofyWzLOsXmEoSi3mPmfFl7UxUbbLGB78P7K35j1T9LU+eFQbnEfB5RQqdPsUW7I3+xEcaLCl2hF2kZ3AryiXvFfepc/3BSdjvPJYsgGiXAT6oNXIH7m9XbugZWY0aUWWLzU28Dq/VaxZAYXy4Fv4KSf3xmY0wBi5OHqDBtoeW+0EG7mZ/HJi0/VEPrfpWM//gjUx5JJ4Q02+R8VLHd9Dy9NkpcuWw59JBH6STP9gQlrTtFX+2ZlxtI9N2Q/puCHO8STPKVQLml3V01RQFgNdbc+o/S7tSbYd1lY6Nlpjncq2pRQsEn7a0RvCznO/Ag+JcKDhXrSng=
