@@ -16,6 +16,9 @@ before_script:
 deploy:
   app: $APP_NAME
   provider: $PROVIDER
+  on:
+    repo: surabhi226005/express-mongoose-es6-rest-api
+    branch: release
   api_key:
     secure: $TRAVIS_SECURE_API_KEY
 after_success:
