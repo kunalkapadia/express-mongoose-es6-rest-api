@@ -1,26 +1,31 @@
 language: node_js
 node_js:
-  - '7.6'
+- '7.6'
 services:
-  - mongodb
+- mongodb
 cache:
   directories:
   - node_modules
 git:
   depth: 3
+install:
+- git clone $GIT_CLONE_REMOTE
+- cd $REPO_NAME
+- git checkout $TRAVIS_BRANCH
+- npm i
 script: npm run travis-script
 after_script:
-  - npm report-coverage
+- npm report-coverage
 before_script:
-  - npm install -g gulp-cli
+- npm install -g gulp-cli
 deploy:
-  app: $APP_NAME
+  app: $PROVIDER_APP_NAME
   provider: $PROVIDER
   on:
-    repo: surabhi226005/express-mongoose-es6-rest-api
-    branch: release
+    repo: $PROVIDER_REPO_NAME
+    all_branches: true
   api_key:
     secure: $TRAVIS_SECURE_API_KEY
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "develop" ] ; then 
-    if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then bash travis.sh ; fi ; fi
+- if [ "$TRAVIS_BRANCH" == "develop" ] ; then if [ "$TRAVIS_PULL_REQUEST" == "false"
+  ] ; then bash travis.sh ; fi ; fi
