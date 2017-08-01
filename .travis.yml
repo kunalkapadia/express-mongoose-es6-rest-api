@@ -18,11 +18,7 @@ script: npm run travis-script
 #   - npm report-coverage
 before_script:
   - npm install -g gulp-cli
-# deploy:
-#   app: $PROVIDER_APP_NAME
-#   skip_cleanup: true
-#   provider: $PROVIDER
-#   on:
-#     branch: $NEW_TRAVIS_BRANCH
+deploy:
+  skip_cleanup: true
 after_success:
   - if [ "$TRAVIS_BRANCH" == "develop" ] ; then if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then bash travis.sh ; fi ; fi
