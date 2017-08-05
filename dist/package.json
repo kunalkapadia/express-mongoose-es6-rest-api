@@ -20,7 +20,7 @@
     "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register server/tests --recursive",
     "test:check-coverage": "npm test:coverage && istanbul check-coverage",
     "report-coverage": "coveralls < ./coverage/lcov.info",
-    "travis-script": "npm run lint && npm test && npm run build"
+    "travis-script": "if [ \"$TRAVIS_BRANCH\" = \"develop\" ] ; then npm run lint && npm test && npm run build ; else npm run lint && npm test ; fi"
   },
   "repository": {
     "type": "git",
