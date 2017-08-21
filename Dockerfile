@@ -1,5 +1,5 @@
 # Use latest node version 8.x
-FROM node:8
+FROM node:8.4.0
 
 MAINTAINER Kunal Kapadia <kunalkapadia12@gmail.com>
 
