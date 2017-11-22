@@ -10,6 +10,8 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Support via Paypal](https://img.shields.io/badge/support-paypal-yellowgreen.svg?style=flat-square)](https://www.paypal.me/KunalKapadia)
 
+[![Code Sponsor](https://app.codesponsor.io/embed/J9YBdeLoqYqrG8tmMKF4p6Pv/KunalKapadia/express-mongoose-es6-rest-api.svg)](https://app.codesponsor.io/link/J9YBdeLoqYqrG8tmMKF4p6Pv/KunalKapadia/express-mongoose-es6-rest-api)
+
 # [![Express ES6 REST API Starter](https://cloud.githubusercontent.com/assets/4172932/12660610/90f5b856-c63a-11e5-878e-c9f0bbf33090.jpg)](https://github.com/KunalKapadia/express-mongoose-es6-rest-api)
 
 ## Overview
