@@ -11,9 +11,10 @@
     "yarn": ">=0.20.3"
   },
   "scripts": {
-    "start": "gulp serve",
+    "start": "nodemon --ignore lib --exec babel-node index.js",
     "start:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
-    "build": "gulp",
+    "prod:build": "rimraf lib && babel server -d lib --ignore .test.js",
+    "prod:start": "node lib/index.js",
     "lint": "esw *.js server config --color",
     "lint:watch": "yarn lint -- --watch",
     "precommit": "yarn lint && yarn test",
@@ -41,55 +42,46 @@
     "boilerplate"
   ],
   "dependencies": {
-    "bluebird": "3.4.6",
-    "body-parser": "1.15.2",
-    "compression": "1.6.2",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "8.2.1",
+    "babel-preset-env": "1.6.1",
+    "bluebird": "3.5.1",
+    "body-parser": "1.18.2",
+    "compression": "1.7.1",
     "cookie-parser": "1.4.3",
-    "cors": "2.8.1",
+    "cors": "2.8.4",
     "debug": "^2.4.5",
     "dotenv": "^4.0.0",
-    "express": "4.14.0",
+    "express": "4.16.2",
     "express-jwt": "5.1.0",
-    "express-validation": "1.0.1",
-    "express-winston": "2.1.2",
-    "helmet": "3.1.0",
-    "http-status": "^0.2.0",
-    "joi": "10.0.6",
-    "jsonwebtoken": "7.1.9",
-    "method-override": "^2.3.5",
+    "express-validation": "1.0.2",
+    "express-winston": "2.4.0",
+    "helmet": "3.10.0",
+    "http-status": "^1.0.1",
+    "joi": "13.0.2",
+    "jsonwebtoken": "8.1.0",
+    "method-override": "^2.3.10",
     "mongoose": "4.7.4",
-    "morgan": "1.7.0",
+    "morgan": "1.9.0",
     "winston": "2.3.0"
   },
   "devDependencies": {
-    "babel-cli": "6.18.0",
-    "babel-core": "6.18.0",
-    "babel-plugin-add-module-exports": "0.2.1",
-    "babel-preset-es2015": "6.16.0",
-    "babel-preset-stage-2": "6.18.0",
     "chai": "^3.4.1",
     "commitizen": "^2.9.2",
     "coveralls": "^2.11.6",
     "cross-env": "3.1.3",
     "cz-conventional-changelog": "1.2.0",
-    "del": "^2.2.0",
-    "eslint": "3.16.1",
+    "eslint": "^4.16.0",
     "eslint-config-airbnb-base": "7.1.0",
-    "eslint-plugin-import": "1.16.0",
-    "eslint-watch": "2.1.14",
-    "gulp": "3.9.1",
-    "gulp-babel": "6.1.2",
-    "gulp-load-plugins": "^1.2.0",
-    "gulp-newer": "^1.1.0",
-    "gulp-nodemon": "^2.0.6",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-util": "^3.0.7",
+    "eslint-plugin-import": "~2.8.0",
+    "eslint-watch": "3.1.3",
     "husky": "^0.13.1",
     "istanbul": "1.1.0-alpha.1",
     "mocha": "3.2.0",
-    "run-sequence": "^1.1.5",
-    "supertest": "2.0.1",
-    "supertest-as-promised": "4.0.2",
+    "nodemon": "1.12.1",
+    "rimraf": "2.6.2",
+    "supertest": "3.0.0",
     "validate-commit-msg": "^2.6.1"
   },
   "license": "MIT",
@@ -97,14 +89,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-2"
-    ],
-    "plugins": [
-      "add-module-exports"
-    ]
   }
 }

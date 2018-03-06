@@ -98,15 +98,6 @@ yarn lint
 yarn lint:watch
 ```
 
-Other gulp tasks:
-```sh
-# Wipe out dist and coverage directory
-gulp clean
-
-# Default task: Wipes out dist and coverage directory. Compiles using babel.
-gulp
-```
-
 ##### Deployment
 
 ```sh
@@ -155,11 +146,7 @@ Get code coverage summary on executing `yarn test`
 
 ## A Boilerplate-only Option
 
-If you would prefer not to use any of our tooling, delete the following files from the project: `package.json`, `gulpfile.babel.js`, `.eslintrc` and `.travis.yml`. You can now safely use the boilerplate with an alternative build-system or no build-system at all if you choose.
-
-## Docs and Recipes
-
-* [Gulp recipes](https://github.com/gulpjs/gulp/tree/master/docs/recipes) - the official Gulp recipes directory includes a comprehensive list of guides for different workflows you can add to your project.
+If you would prefer not to use any of our tooling, delete the following files from the project: `package.json`, `.eslintrc` and `.travis.yml`. You can now safely use the boilerplate with an alternative build-system or no build-system at all if you choose.
 
 ## Contributing
 
