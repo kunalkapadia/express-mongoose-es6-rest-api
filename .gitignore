@@ -46,3 +46,6 @@ node_modules
 
 # environment variables configuration file
 .env
+
+# build folder
+lib
