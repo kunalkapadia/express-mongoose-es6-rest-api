@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import request from 'supertest-as-promised';
+import request from 'supertest';
 import httpStatus from 'http-status';
 import chai, { expect } from 'chai';
 import app from '../../index';

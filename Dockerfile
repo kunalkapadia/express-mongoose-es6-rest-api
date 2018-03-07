@@ -1,5 +1,5 @@
-# take default image of node boron i.e  node 6.x
-FROM node:6.10.1
+# take default image of node boron i.e node 8.x
+FROM node:8
 
 MAINTAINER Kunal Kapadia <kunalkapadia12@gmail.com>
 
@@ -9,9 +9,9 @@ RUN mkdir -p /app
 # set /app directory as default working directory
 WORKDIR /app
 
-# only copy package.json initially so that `RUN yarn` layer is recreated only
+# copy package.json initially so that `RUN yarn` layer is recreated only
 # if there are changes in package.json
-ADD package.json yarn.lock /app/
+ADD package.json yarn.lock /config/ /app/
 
 # --pure-lockfile: Don’t generate a yarn.lock lockfile
 RUN yarn --pure-lockfile
@@ -22,5 +22,8 @@ COPY . /app/
 # expose port 4040
 EXPOSE 4040
 
+# build node app with babel
+RUN yarn prod:build
+
 # cmd to start service
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "prod:start" ]

@@ -32,7 +32,12 @@ services:
     # so they determine the order of service startup.
     links:
       - mongo
+
+    labels:
+      kompose.service.type: nodeport
+    depends_on:
+      - mongo
   mongo:
-    image: "mongo:3.4.2"
+    image: "mongo:3.6"
     ports:
       - "27017:27017"
