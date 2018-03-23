@@ -1,5 +1,5 @@
-# take default image of node boron i.e  node 6.x
-FROM node:6.10.1
+# Use latest node version 8.x
+FROM node:8.10.0
 
 MAINTAINER Kunal Kapadia <kunalkapadia12@gmail.com>
 

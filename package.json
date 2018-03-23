@@ -1,25 +1,24 @@
 {
   "name": "express-mongoose-es6-rest-api",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
   "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
   "main": "index.js",
   "private": false,
   "engines": {
-    "node": ">=4.8.0",
-    "npm": ">=2.15.11",
-    "yarn": ">=0.20.3"
+    "node": ">=8.10.0",
+    "npm": ">=5.6.0",
+    "yarn": ">=1.5.1"
   },
   "scripts": {
-    "start": "gulp serve",
+    "start": "node index.js",
     "start:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
-    "build": "gulp",
     "lint": "esw *.js server config --color",
     "lint:watch": "yarn lint -- --watch",
     "precommit": "yarn lint && yarn test",
-    "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors --compilers js:babel-core/register server/tests --recursive",
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors server --recursive",
     "test:watch": "yarn test -- --watch",
-    "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors --compilers js:babel-core/register server/tests --recursive",
+    "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors server --recursive",
     "test:check-coverage": "yarn test:coverage && istanbul check-coverage",
     "report-coverage": "coveralls < ./coverage/lcov.info"
   },
@@ -41,54 +40,40 @@
     "boilerplate"
   ],
   "dependencies": {
-    "bluebird": "3.4.6",
-    "body-parser": "1.15.2",
-    "compression": "1.6.2",
+    "bluebird": "3.5.0",
+    "body-parser": "1.17.2",
+    "compression": "1.7.0",
     "cookie-parser": "1.4.3",
-    "cors": "2.8.1",
+    "cors": "2.8.4",
     "debug": "^2.4.5",
     "dotenv": "^4.0.0",
-    "express": "4.14.0",
-    "express-jwt": "5.1.0",
-    "express-validation": "1.0.1",
-    "express-winston": "2.1.2",
-    "helmet": "3.1.0",
-    "http-status": "^0.2.0",
-    "joi": "10.0.6",
+    "express": "4.15.4",
+    "express-jwt": "5.3.0",
+    "express-validation": "1.0.2",
+    "express-winston": "2.4.0",
+    "helmet": "3.8.1",
+    "http-status": "1.0.1",
+    "joi": "10.6.0",
     "jsonwebtoken": "7.1.9",
     "method-override": "^2.3.5",
     "mongoose": "4.7.4",
-    "morgan": "1.7.0",
-    "winston": "2.3.0"
+    "morgan": "1.8.2",
+    "winston": "2.3.1"
   },
   "devDependencies": {
-    "babel-cli": "6.18.0",
-    "babel-core": "6.18.0",
-    "babel-plugin-add-module-exports": "0.2.1",
-    "babel-preset-es2015": "6.16.0",
-    "babel-preset-stage-2": "6.18.0",
-    "chai": "^3.4.1",
+    "chai": "4.1.1",
     "commitizen": "^2.9.2",
     "coveralls": "^2.11.6",
-    "cross-env": "3.1.3",
+    "cross-env": "5.0.5",
     "cz-conventional-changelog": "1.2.0",
-    "del": "^2.2.0",
     "eslint": "3.16.1",
     "eslint-config-airbnb-base": "7.1.0",
     "eslint-plugin-import": "1.16.0",
     "eslint-watch": "2.1.14",
-    "gulp": "3.9.1",
-    "gulp-babel": "6.1.2",
-    "gulp-load-plugins": "^1.2.0",
-    "gulp-newer": "^1.1.0",
-    "gulp-nodemon": "^2.0.6",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-util": "^3.0.7",
-    "husky": "^0.13.1",
+    "husky": "0.14.3",
     "istanbul": "1.1.0-alpha.1",
-    "mocha": "3.2.0",
-    "run-sequence": "^1.1.5",
-    "supertest": "2.0.1",
+    "mocha": "3.5.0",
+    "supertest": "3.0.0",
     "supertest-as-promised": "4.0.2",
     "validate-commit-msg": "^2.6.1"
   },
@@ -97,14 +82,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-2"
-    ],
-    "plugins": [
-      "add-module-exports"
-    ]
   }
 }
