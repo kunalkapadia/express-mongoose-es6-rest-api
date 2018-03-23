@@ -1,4 +1,4 @@
-import Joi from 'joi';
+const Joi = require('joi');
 
 // require and configure dotenv, will load vars in .env in PROCESS.ENV
 require('dotenv').config();
@@ -41,4 +41,4 @@ const config = {
   }
 };
 
-export default config;
+module.exports = config;

@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
-import util from 'util';
+const mongoose = require('mongoose');
+const util = require('util');
 
 // config should be imported before importing any other file
-import config from './config/config';
-import app from './config/express';
+const config = require('./config/config');
+const app = require('./config/express');
 
 const debug = require('debug')('express-mongoose-es6-rest-api:index');
 
@@ -21,7 +21,7 @@ mongoose.connection.on('error', () => {
 });
 
 // print mongoose logs in dev env
-if (config.MONGOOSE_DEBUG) {
+if (config.mongooseDebug) {
   mongoose.set('debug', (collectionName, method, query, doc) => {
     debug(`${collectionName}.${method}`, util.inspect(query, false, 20), doc);
   });
@@ -36,4 +36,4 @@ if (!module.parent) {
   });
 }
 
-export default app;
+module.exports = app;
