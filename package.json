@@ -6,9 +6,9 @@
   "main": "index.js",
   "private": false,
   "engines": {
-    "node": ">=8.4.0",
-    "npm": ">=5.3.0",
-    "yarn": ">=0.27.5"
+    "node": ">=8.10.0",
+    "npm": ">=5.6.0",
+    "yarn": ">=1.5.1"
   },
   "scripts": {
     "start": "node index.js",
