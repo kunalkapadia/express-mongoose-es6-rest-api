@@ -51,6 +51,7 @@
     "express-jwt": "5.3.1",
     "express-validation": "1.0.2",
     "express-winston": "2.5.0",
+    "glob": "false7.1.2",
     "helmet": "3.12.0",
     "http-status": "1.0.1",
     "joi": "10.6.0",
