@@ -1,0 +1,517 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "untitled API",
+    "version": "237"
+  },
+  "paths": {
+    "/api/users/{user_id}": {
+      "delete": {
+        "operationId": "request_PTZt4LxbI8",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "__v",
+                    "_id",
+                    "createdAt",
+                    "mobileNumber",
+                    "username"
+                  ],
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "mobileNumber": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "__v": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "message",
+                    "stack"
+                  ],
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stack": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "get": {
+        "operationId": "request_GOtsuNMauL",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "__v",
+                    "_id",
+                    "createdAt",
+                    "mobileNumber",
+                    "username"
+                  ],
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "mobileNumber": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "__v": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "message",
+                    "stack"
+                  ],
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stack": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "operationId": "request_KimcbdCyLa",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "mobileNumber",
+                  "username"
+                ],
+                "properties": {
+                  "mobileNumber": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "__v",
+                    "_id",
+                    "createdAt",
+                    "mobileNumber",
+                    "username"
+                  ],
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "mobileNumber": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "__v": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "message",
+                    "stack"
+                  ],
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stack": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "name": "user_id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "/api/auth/random-number": {
+      "get": {
+        "operationId": "request_tbH5yduHn1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "password",
+                  "username"
+                ],
+                "properties": {
+                  "password": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "num",
+                    "user"
+                  ],
+                  "properties": {
+                    "num": {
+                      "type": "number"
+                    },
+                    "user": {
+                      "type": "object",
+                      "required": [
+                        "iat",
+                        "username"
+                      ],
+                      "properties": {
+                        "iat": {
+                          "type": "number"
+                        },
+                        "username": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "message",
+                    "stack"
+                  ],
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stack": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/api/users": {
+      "get": {
+        "operationId": "request_Mh7hI25Mu3",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "__v",
+                      "_id",
+                      "createdAt",
+                      "mobileNumber",
+                      "username"
+                    ],
+                    "properties": {
+                      "username": {
+                        "type": "string"
+                      },
+                      "_id": {
+                        "type": "string"
+                      },
+                      "mobileNumber": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "__v": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "request_1P8uJqc1fd",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "mobileNumber",
+                  "username"
+                ],
+                "properties": {
+                  "mobileNumber": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "__v",
+                    "_id",
+                    "createdAt",
+                    "mobileNumber",
+                    "username"
+                  ],
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "_id": {
+                      "type": "string"
+                    },
+                    "mobileNumber": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "__v": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/api/health-check": {
+      "get": {
+        "operationId": "request_0FOj3sUfKI",
+        "responses": {
+          "200": {
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "OK"
+                  ],
+                  "properties": {
+                    "OK": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "parameters": []
+    },
+    "/api/auth/login": {
+      "post": {
+        "operationId": "request_sPldQ1x1Dz",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "password",
+                  "username"
+                ],
+                "properties": {
+                  "password": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "token",
+                    "username"
+                  ],
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    },
+                    "username": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "message",
+                    "stack"
+                  ],
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "stack": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "description": ""
+          }
+        }
+      },
+      "parameters": []
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
