@@ -1,4 +1,4 @@
-name: express-mongoose-es6-rest-api
+name: express mongoose es6 rest api
 tasks:
   # The default task, invoke using `api run start`
   # Learn how to finish setting up Optic at http://docs.useoptic.com/setup

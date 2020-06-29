@@ -35,6 +35,7 @@ Heavily inspired from [Egghead.io - How to Write an Open Source JavaScript Libra
 | Pre-commit hooks           | Runs lint and tests before any commit is made locally, making sure that only tested and quality code is committed
 | Secure app via [helmet](https://github.com/helmetjs/helmet)           | Helmet helps secure Express apps by setting various HTTP headers. |
 | Uses [yarn](https://yarnpkg.com) over npm            | Uses new released yarn package manager by facebook. You can read more about it [here](https://code.facebook.com/posts/1840075619545360) |
+| Automated Documentation via [Optic](https://github.com/opticdev/optic)           | Optic automatically documents changes, tests every endpoint, and gives you valuable insight into how your APIs are being used. |
 
 - CORS support via [cors](https://github.com/expressjs/cors)
 - Uses [http-status](https://www.npmjs.com/package/http-status) to set http status code. It is recommended to use `httpStatus.INTERNAL_SERVER_ERROR` instead of directly using `500` when setting status code.
@@ -144,6 +145,11 @@ Get code coverage summary on executing `yarn test`
 
 `yarn test` also generates HTML code coverage report in `coverage/` directory. Open `lcov-report/index.html` to view it.
 ![Code coverage HTML report](https://cloud.githubusercontent.com/assets/4172932/12625331/571a48fe-c559-11e5-8aa0-f9aacfb8c1cb.jpg)
+
+## Automated Documentation via Optic
+Generate the current api documentation by doing `npm run api-docs`. To update the docs, simply run diff mode via `npm run api-diff`. This will create a proxied version of the api available @ [http://localhost:4040](http://localhost:4040). Now, you can use your api like normal (testing all routes you may have modified), and document changes to the api by commiting them @ the diff page (this will be displayed in your terminal). Now, you can approve all changes to api behavior, creating documentation as you develop.
+
+More information available @ [Optic's Docs](https://docs.useoptic.com/)
 
 ## Docker
 
