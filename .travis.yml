@@ -17,4 +17,8 @@ before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.5.1
   - export PATH=$HOME/.yarn/bin:$PATH
 env:
-  - JWT_SECRET=asecuresecret
+  - NODE_ENV=development
+  - PORT=4040
+  - JWT_SECRET=0a6b944d-d2fb-46fc-a85e-0295c986cd9f
+  - MONGO_HOST=mongodb://localhost:27017/express-mongoose-es6-rest-api-development
+  - MONGO_PORT=27017
