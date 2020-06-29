@@ -21,6 +21,7 @@
     "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors server --recursive",
     "test:check-coverage": "yarn test:coverage && istanbul check-coverage",
     "report-coverage": "coveralls < ./coverage/lcov.info",
+    "api-install": "npm install -g @useoptic/cli",
     "api-diff": "api start",
     "api-docs": "api spec",
     "generate-openapi": "api generate:oas"
@@ -64,7 +65,6 @@
     "winston": "2.4.1"
   },
   "devDependencies": {
-    "@useoptic/cli": "^8.1.1",
     "chai": "4.1.2",
     "commitizen": "^2.9.6",
     "coveralls": "^3.0.0",
