@@ -49,3 +49,7 @@ node_modules
 
 # .env
 .env
+
+# Optic Files
+.optic-daemon.log
+.optic/captures
