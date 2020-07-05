@@ -15,9 +15,7 @@
 ## Sponsor
 You can support the project by checking out our sponsor page. It takes only one click:
 
-<!--
-<a href="https://tracking.gitads.io/?repo=express-mongoose-es6-rest-api"> target="_blank" <img src="https://images.gitads.io/express-mongoose-es6-rest-api" alt="Some great stuff" style="height: auto !important;width: auto !important;"/> </a>
--->
+<a href="https://tracking.gitads.io/?repo=express-mongoose-es6-rest-api" target="_blank"> <img src="https://images.gitads.io/express-mongoose-es6-rest-api" alt="Some great stuff" style="height: auto !important;width: auto !important;"/> </a>
 
 ## Overview
 
