@@ -1,4 +1,4 @@
-const User = require('./user.model');
+const User = require('./users.model');
 
 /**
  * Load user and append to req.
