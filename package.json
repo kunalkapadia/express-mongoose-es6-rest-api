@@ -20,7 +20,11 @@
     "test:watch": "yarn test -- --watch",
     "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors server --recursive",
     "test:check-coverage": "yarn test:coverage && istanbul check-coverage",
-    "report-coverage": "coveralls < ./coverage/lcov.info"
+    "report-coverage": "coveralls < ./coverage/lcov.info",
+    "api-install": "npm install -g @useoptic/cli",
+    "api-diff": "api start",
+    "api-docs": "api spec",
+    "generate-openapi": "api generate:oas"
   },
   "repository": {
     "type": "git",
